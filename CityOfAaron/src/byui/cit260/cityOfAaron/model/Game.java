@@ -5,7 +5,7 @@
  */
 package byui.cit260.cityOfAaron.model;
 
-import java.util.Objects;
+import java.io.Serializable;
 
 /**
  *
@@ -15,12 +15,13 @@ public class Game implements Serializable {
     private Player thePlayer;
     private Map theMap;
     private Storehouse theStorehouse;
-    int currentPopulation;
-    int acresOwned;
-    int wheatInStorage;
-    int currentYear;
+    private int currentPopulation;
+    private int acresOwned;
+    private int wheatInStorage;
+    private int currentYear;
 
     public Game() {
+        // Empty Constructor for JavaBeans
     }
 
     
@@ -82,58 +83,15 @@ public class Game implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.thePlayer);
-        hash = 89 * hash + Objects.hashCode(this.theMap);
-        hash = 89 * hash + Objects.hashCode(this.theStorehouse);
-        hash = 89 * hash + this.currentPopulation;
-        hash = 89 * hash + this.acresOwned;
-        hash = 89 * hash + this.wheatInStorage;
-        hash = 89 * hash + this.currentYear;
-        return hash;
-    }
-
-    @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + ", theMap=" + theMap + ", theStorehouse=" + theStorehouse + ", currentPopulation=" + currentPopulation + ", acresOwned=" + acresOwned + ", wheatInStorage=" + wheatInStorage + ", currentYear=" + currentYear + '}';
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (this.currentPopulation != other.currentPopulation) {
-            return false;
-        }
-        if (this.acresOwned != other.acresOwned) {
-            return false;
-        }
-        if (this.wheatInStorage != other.wheatInStorage) {
-            return false;
-        }
-        if (this.currentYear != other.currentYear) {
-            return false;
-        }
-        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
-            return false;
-        }
-        if (!Objects.equals(this.theMap, other.theMap)) {
-            return false;
-        }
-        if (!Objects.equals(this.theStorehouse, other.theStorehouse)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+        return "Game {" 
+                + "thePlayer=" + thePlayer 
+                + ", theMap=" + theMap 
+                + ", theStorehouse=" + theStorehouse 
+                + ", currentPopulation=" + currentPopulation 
+                + ", acresOwned=" + acresOwned 
+                + ", wheatInStorage=" + wheatInStorage 
+                + ", currentYear=" + currentYear 
+                + '}';
+    }  
 }

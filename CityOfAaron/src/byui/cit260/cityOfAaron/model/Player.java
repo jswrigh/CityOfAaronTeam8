@@ -5,7 +5,7 @@
  */
 package byui.cit260.cityOfAaron.model;
 
-import java.util.Objects;
+import java.io.Serializable;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Player implements Serializable {
     private String name;
 
     public Player() {
-        
+        // Empty Constructor for JavaBeans
     }
     
     public String getName() {
@@ -28,35 +28,7 @@ public class Player implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.name);
-        return hash;
-    }
-
-    @Override
     public String toString() {
         return "Player{" + "name=" + name + '}';
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
 }

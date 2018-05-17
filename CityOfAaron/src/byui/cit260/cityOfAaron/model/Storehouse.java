@@ -9,14 +9,14 @@ package byui.cit260.cityOfAaron.model;
  *
  * @author Jacob
  */
-public class Map {
+public class Storehouse {
     
-    public Map() {
+    public Storehouse() {
         // Empty Constructor for JavaBeans
     }
     
     @Override
     public String toString() {
-        return "Map class coming soon.";
+        return "Storehouse class coming soon.";
     }    
 }
