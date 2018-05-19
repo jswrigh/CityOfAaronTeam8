@@ -9,6 +9,11 @@ import byui.cit260.cityOfAaron.model.Game;
 import byui.cit260.cityOfAaron.model.Player;
 import byui.cit260.cityOfAaron.model.Storehouse;
 import byui.cit260.cityOfAaron.model.Map;
+import byui.cit260.cityOfAaron.model.Author;
+import byui.cit260.cityOfAaron.model.InventoryItem;
+import byui.cit260.cityOfAaron.model.ItemType;
+import byui.cit260.cityOfAaron.model.Condition;
+
 
 /**
  *
@@ -27,8 +32,21 @@ public class CityOfAaron {
         theGame.setCurrentPopulation(105);
         theGame.setAcresOwned(2000);
         theGame.setWheatInStorage(15000);
-
+        
         System.out.println(theGame.toString());
+        
+        InventoryItem theInventoryItem = new InventoryItem();
+        theInventoryItem.setItemType(ItemType.Animal);
+        theInventoryItem.setCondition(Condition.Good);
+        theInventoryItem.setQuantity(10);
+        
+        System.out.println(theInventoryItem.toString());
+        
+        Author testAuthor = new Author();
+        testAuthor.setName("Mr. Author");
+        testAuthor.setTitle("Big Cheese");
+        
+        System.out.println(testAuthor.toString());
     }
     
 }
