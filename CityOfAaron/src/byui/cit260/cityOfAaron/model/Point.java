@@ -72,3 +72,18 @@ public class Point implements Serializable{
   
 }
 
+/**
+ *
+ * @author Jacob
+ */
+public class Point {
+    
+    public Point() {
+        // Empty Constructor for JavaBeans
+    }
+    
+    @Override
+    public String toString() {
+        return "Point class coming soon.";
+    }    
+}

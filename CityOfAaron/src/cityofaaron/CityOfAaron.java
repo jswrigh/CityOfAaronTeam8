@@ -13,6 +13,8 @@ import byui.cit260.cityOfAaron.model.Author;
 import byui.cit260.cityOfAaron.model.InventoryItem;
 import byui.cit260.cityOfAaron.model.ItemType;
 import byui.cit260.cityOfAaron.model.Condition;
+import byui.cit260.cityOfAaron.model.Location;
+
 
 
 /**
@@ -35,6 +37,7 @@ public class CityOfAaron {
         
         System.out.println(theGame.toString());
         
+        
         InventoryItem theInventoryItem = new InventoryItem();
         theInventoryItem.setItemType(ItemType.Animal);
         theInventoryItem.setCondition(Condition.Good);
@@ -42,11 +45,32 @@ public class CityOfAaron {
         
         System.out.println(theInventoryItem.toString());
         
+        
         Author testAuthor = new Author();
         testAuthor.setName("Mr. Author");
         testAuthor.setTitle("Big Cheese");
         
         System.out.println(testAuthor.toString());
+        
+        Location theLocation = new Location();
+        theLocation.setName("Test Location");
+        theLocation.setDescription("Test Description");
+        theLocation.setMapSymbol("Test Name");
+        
+        // Couldn't figure out array - Jacob
+        // theLocation.setGameTips();
+        
+        System.out.println(theLocation.toString());
+        
+        
+        Storehouse theStorehouse = new Storehouse();
+        
+        // Couldn't figure out arrays - Jacob
+        // theStorehouse.setAuthors();
+        // theStorehouse.setAnimals();
+        // theStorehouse.setTools();
+        // theStorehouse.setProvisions();
+        
+        System.out.println(theStorehouse.toString());
     }
-    
 }
