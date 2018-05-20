@@ -5,18 +5,40 @@
  */
 package byui.cit260.cityOfAaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jacob
  */
-public class Map {
-    
+
+public class Map implements Serializable {
+    private Location locations;
+    private Point currentLocation;
+
     public Map() {
         // Empty Constructor for JavaBeans
     }
     
+    public Location getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location locations) {
+        this.locations = locations;
+    }
+
+    public Point getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Point currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
     @Override
     public String toString() {
-        return "Map class coming soon.";
-    }    
+        return "Map{" + "locations=" + locations 
+                + ", currentLocation=" + currentLocation + '}';
+    }  
 }
