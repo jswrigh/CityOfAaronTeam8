@@ -22,9 +22,7 @@ public class Game implements Serializable {
 
     public Game() {
         // Empty Constructor for JavaBeans
-    }
-
-    
+    }    
     
     public Player getThePlayer() {
         return thePlayer;

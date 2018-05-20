@@ -5,18 +5,22 @@
  */
 package byui.cit260.cityOfAaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jacob
  */
-public class Storehouse {
+public class Storehouse implements Serializable {
+    private Author authors;
+    private InventoryItem animals;
+    private InventoryItem tools;
+    private IventoryItem provisions;
+    
     
     public Storehouse() {
         // Empty Constructor for JavaBeans
     }
     
-    @Override
-    public String toString() {
-        return "Storehouse class coming soon.";
-    }    
+
 }
