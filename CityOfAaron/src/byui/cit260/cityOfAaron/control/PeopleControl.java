@@ -9,6 +9,6 @@ package byui.cit260.cityOfAaron.control;
  *
  * @author sterling
  */
-public class HarvestCrops {
+public class PeopleControl {
     
 }
