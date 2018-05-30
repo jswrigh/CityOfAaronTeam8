@@ -37,7 +37,7 @@ public class CropControlTest {
         testCase7();
     }
         
-    private void testCase1 () { // ---- Test case 1 ----
+    private void testCase1 () { // --- Test case 1 ----
         System.out.println("/tTest case 1");
         
         // define the input variables
