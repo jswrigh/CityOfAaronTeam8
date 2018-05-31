@@ -1,7 +1,5 @@
 package byui.cit260.cityOfAaron.control;
 
-import org.junit.After;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,30 +12,14 @@ public class CropControlTest {
     public CropControlTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
+     /**
      * Test of harvestCrops method, of class CropControl.
      */
-    @Test
     public void testHarvestCrops() {
-        System.out.println("harvestCrops");
-        testCase1();
-        testCase2();
-        testCase3();
-        testCase4();
-        testCase5();
-        testCase6();
-        testCase7();
     }
-        
-    private void testCase1 () { // --- Test case 1 ----
+    @Test    
+    public void testCase1 () { 
+        // --- Test case 1 ----
         System.out.println("/tTest case 1");
         
         // define the input variables
@@ -45,7 +27,7 @@ public class CropControlTest {
         int previousCropYield = 1000;
         int acres = 1200;
         
-        int expResult = 3600; // define the expected result variable
+        int expResult = 4800; // define the expected result variable
         
         // call the method
         int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
@@ -54,7 +36,8 @@ public class CropControlTest {
         assertEquals(expResult, result);
     }
         
-    private void testCase2 () {
+    @Test    
+    public void testCase2 () {
         // ---- Test case 2 ----
         System.out.println("/tTest case 2");
         
@@ -72,7 +55,8 @@ public class CropControlTest {
         assertEquals(expResult, result);
     }
     
-     private void testCase3() {    
+    @Test    
+     public void testCase3() {    
         // ---- Test case 3 ----
         System.out.println("/tTest case 3");
         
@@ -90,7 +74,8 @@ public class CropControlTest {
         assertEquals(expResult, result);   
      }
         
-     private void testCase4() {        
+    @Test    
+     public void testCase4() {        
         // ---- Test case 4 ----
         System.out.println("/tTest case 4");
         
@@ -108,7 +93,8 @@ public class CropControlTest {
         assertEquals(expResult, result); 
      } 
              
-     private void testCase5() {
+    @Test    
+     public void testCase5() {
      // ---- Test case 5 ----
         System.out.println("/tTest case 5");
         
@@ -117,7 +103,7 @@ public class CropControlTest {
         int previousCropYield = 1000;
         int acres = 1200;
         
-        int expResult = 2400; // define the expected result variable
+        int expResult = 3600; // define the expected result variable
         
         // call the method
         int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
@@ -126,7 +112,8 @@ public class CropControlTest {
         assertEquals(expResult, result);  
      }
         
-    private void testCase6() {
+    @Test    
+    public void testCase6() {
      // ---- Test case 6 ----
         System.out.println("/tTest case 6");
         
@@ -135,7 +122,7 @@ public class CropControlTest {
         int previousCropYield = 1000;
         int acres = 1200;
         
-        int expResult = 4800; // define the expected result variable
+        int expResult = 6000; // define the expected result variable
         
         // call the method
         int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
@@ -144,7 +131,8 @@ public class CropControlTest {
         assertEquals(expResult, result);   
     }
     
-    private void testCase7() {    
+    @Test    
+    public void testCase7() {    
         // ---- Test case 7 ----
         System.out.println("/tTest case 7");
         
