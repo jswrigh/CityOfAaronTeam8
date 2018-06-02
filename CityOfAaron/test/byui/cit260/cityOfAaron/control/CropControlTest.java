@@ -20,7 +20,7 @@ public class CropControlTest {
     @Test    
     public void testCase1 () { 
         // --- Test case 1 ----
-        System.out.println("/tTest case 1");
+        System.out.println("Test case 1");
         
         // define the input variables
         int offerings = 100;
@@ -39,7 +39,7 @@ public class CropControlTest {
     @Test    
     public void testCase2 () {
         // ---- Test case 2 ----
-        System.out.println("/tTest case 2");
+        System.out.println("Test case 2");
         
         // define the input variables
         int offerings = -100;
@@ -58,7 +58,7 @@ public class CropControlTest {
     @Test    
      public void testCase3() {    
         // ---- Test case 3 ----
-        System.out.println("/tTest case 3");
+        System.out.println("Test case 3");
         
         // define the input variables
         int offerings = 100;
@@ -77,7 +77,7 @@ public class CropControlTest {
     @Test    
      public void testCase4() {        
         // ---- Test case 4 ----
-        System.out.println("/tTest case 4");
+        System.out.println("Test case 4");
         
         // define the input variables
         int offerings = 100;
@@ -96,7 +96,7 @@ public class CropControlTest {
     @Test    
      public void testCase5() {
      // ---- Test case 5 ----
-        System.out.println("/tTest case 5");
+        System.out.println("Test case 5");
         
         // define the input variables
         int offerings = 0;
@@ -115,7 +115,7 @@ public class CropControlTest {
     @Test    
     public void testCase6() {
      // ---- Test case 6 ----
-        System.out.println("/tTest case 6");
+        System.out.println("Test case 6");
         
         // define the input variables
         int offerings = 1000;
@@ -134,7 +134,7 @@ public class CropControlTest {
     @Test    
     public void testCase7() {    
         // ---- Test case 7 ----
-        System.out.println("/tTest case 7");
+        System.out.println("Test case 7");
         
         // define the input variables
         int offerings = 1;
