@@ -52,24 +52,22 @@ public class CityOfAaron {
         
         System.out.println(testAuthor.toString());
         
+        
         Location theLocation = new Location();
         theLocation.setName("Test Location");
         theLocation.setDescription("Test Description");
         theLocation.setMapSymbol("Test Name");
-        
-        // Couldn't figure out array - Jacob
         // theLocation.setGameTips();
         
         System.out.println(theLocation.toString());
         
         
         Storehouse theStorehouse = new Storehouse();
-        
-        // Couldn't figure out arrays - Jacob
         // theStorehouse.setAuthors();
         // theStorehouse.setAnimals();
         // theStorehouse.setTools();
         // theStorehouse.setProvisions();
+       
         
         System.out.println(theStorehouse.toString());
     }
