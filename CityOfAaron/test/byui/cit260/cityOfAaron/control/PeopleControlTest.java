@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author HP
+ * @author Charlot
  */
 public class PeopleControlTest {
     
