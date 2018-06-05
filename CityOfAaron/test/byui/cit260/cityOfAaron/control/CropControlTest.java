@@ -150,6 +150,176 @@ public class CropControlTest {
         assertEquals(expResult, result);   
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    * Test of calcRatFood method of class CropControl.
+    */
+    
+    public void testRatFood() {
+    }
+    
+    @Test    
+    public void testRatFoodCase1 () { 
+        
+        // Test Case 1
+        System.out.println("Test Rat Food Case 1");
+        
+        // Inputs
+        int offerings = 45;
+        int wheat = 500;
+        
+        // Expected Result
+        int expResult = 465;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+    }
+        
+    @Test    
+    public void testRatFoodCase2 () {
+        
+        // Test Case 2
+        System.out.println("Test Rat Food Case 2");
+        
+        // Inputs
+        int offerings = -5;
+        int wheat = -36;
+        
+        // Expected Result
+        int expResult = -1;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+    }
+    
+    @Test    
+     public void testRatFoodCase3() {    
+        
+        // Test Case 3
+        System.out.println("Test Rat Food Case 3");
+        
+        // Inputs
+        int offerings = -39;
+        int wheat = -13;
+        
+        // Expected Result
+        int expResult = -1;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+     }
+        
+    @Test    
+     public void testRatFoodCase4() {        
+        
+        // Test Case 4
+        System.out.println("Test Rat Food Case 4");
+        
+        // Inputs
+        int offerings = -75;
+        int wheat = 5000;
+        
+        // Expected Result
+        int expResult = -1;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+     } 
+             
+    @Test    
+     public void testRatFoodCase5() {
+     
+        // Test Case 5
+        System.out.println("Test Rat Food Case 5");
+        
+        // Inputs
+        int offerings = 0;
+        int wheat = 0;
+        
+        // Expected Result
+        int expResult = 0;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+     }
+        
+    @Test    
+    public void testRatFoodCase6() {
+        
+        // Test Case 6
+        System.out.println("Test Rat Food Case 6");
+        
+        // Inputs
+        int offerings = 500;
+        int wheat = 0;
+        
+        // Expected Result
+        int expResult = 0;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+    }
+    
+    @Test    
+    public void testRatFoodCase7() {    
+        
+        // Test Case 7
+        System.out.println("Test Rat Food Case 7");
+        
+        // Inputs
+        int offerings = 0;
+        int wheat = 7000;
+        
+        // Expected Result
+        int expResult = 6300;
+        
+        // Call Method
+        int result = CropControl.calcRatFood(offerings, wheat);
+        
+        // Test Results
+        assertEquals(expResult, result);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /**
      * Test of randomInt method, of class CropControl.

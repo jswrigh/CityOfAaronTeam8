@@ -35,6 +35,35 @@ public class CropControl {
         return yield*acres;
     }
     
+    //calculateRatFood(offerings,wheat):double
+    public static int calcRatFood(int offerings, int wheat) {
+
+        if (offerings < 0) {
+            return -1;
+        }
+        if (wheat < 0) {
+            return -1;
+        }
+        
+        int ratAttack = randomInt(1,29);
+        int ratFood = 0;
+        
+        if(ratAttack < 30){
+            if (offerings < .08*wheat) {
+                ratFood = wheat*randomInt(6,10)/100;
+            }
+            if (offerings >= .08*wheat && offerings <= .12*wheat) {
+                ratFood = wheat*randomInt(3,7)/100;
+            }
+            if (offerings > .12*wheat) {
+                ratFood = wheat*randomInt(3,5)/100;
+            }            
+        }
+        
+        return wheat-ratFood;
+    }
+    
+    
     public static int randomInt(int lower, int upper) {
         return upper; // replace with random int between lower and upper, inclusive
     }
