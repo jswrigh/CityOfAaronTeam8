@@ -118,7 +118,6 @@ public class PeopleControlTest {
     }
     @Test
     public void testCase6 () {
-    
         // --- Test case 6 ---
         System.out.println("\tTest case 6");
         
