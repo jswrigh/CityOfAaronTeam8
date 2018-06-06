@@ -78,6 +78,8 @@ public class GameControl {
     }
     
         public static int saveGame(String fileName) {
+        
+        /*
         try {
             try (FileOutputStream fileOutput = new FileOutputStream(new File(fileName)); 
                 ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput)) {
@@ -112,6 +114,8 @@ public class GameControl {
             System.out.println("Class not found");
             return -1;
         }
+        */
+        
     return 0;
     }
 }

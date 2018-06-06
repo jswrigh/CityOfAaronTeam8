@@ -15,6 +15,9 @@ import byui.cit260.cityOfAaron.model.ItemType;
 import byui.cit260.cityOfAaron.model.Condition;
 import byui.cit260.cityOfAaron.model.Location;
 
+import byui.cit260.cityOfAaron.view.StartProgramView;
+
+
 
 
 /**
@@ -23,10 +26,25 @@ import byui.cit260.cityOfAaron.model.Location;
  */
 public class CityOfAaron {
 
+    public static Game currentGame = null;
+    
+    public static Game getCurrentGame(){
+        return currentGame;
+    }
+    
+    public static void setCurrentGame(Game game){
+        currentGame = game;
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayView();
+
+        /*
         Game theGame = new Game();
         theGame.setThePlayer(new Player());
         theGame.setTheMap(new Map());
@@ -70,5 +88,7 @@ public class CityOfAaron {
        
         
         System.out.println(theStorehouse.toString());
+
+        */
     }
 }
