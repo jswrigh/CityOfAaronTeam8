@@ -25,7 +25,7 @@ public class StartProgramView {
                     "people. In addition, it will be your job to pay an annual tithe on the wheat that is\n" +
                     "harvested. If you fail to provide enough wheat for the people, people will starve, some\n" +
                     "people will die, and your workforce will be diminished. Plan carefully. And Oh, there is\n" +
-                    "always a danger of rats eating your wheat.";                
+                    "always a danger of rats eating your wheat.\n";                
     }
     
     

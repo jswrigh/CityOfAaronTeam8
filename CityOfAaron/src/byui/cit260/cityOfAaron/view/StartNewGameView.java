@@ -21,14 +21,7 @@ public class StartNewGameView {
      * Constructor
      */
     public StartNewGameView(){
-        
-        message = "This is the message that is printed to the user by this view.\n"
-                + "You have three tasks:\n"
-                + "1 - Replace this message text with the text that is specific to your view.\n"
-                + "2 - Replace this list with menu options that are specific to your view.\n"
-                + "\n"
-                + "3 - Prompt the user for what they are expected to enter.\n";
-                
+        message = " ";
     }
     
     
@@ -152,8 +145,8 @@ public class StartNewGameView {
         CityOfAaron.setCurrentGame(game);
         
         System.out.println("");
-        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!/n"
-                + "Next week we will have a game menu view you will see. But for now, /n"
+        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
+                + "Next week we will have a game menu view you will see. But for now, \n"
                 + "we're just going to send you back to the main menu."
                 );
         

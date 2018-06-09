@@ -82,7 +82,7 @@ public class MainMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
+        inputs[0] = getUserInput("Please enter your choice.");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -112,7 +112,8 @@ public class MainMenuView {
                 
             case "Q" :
                 System.out.println("Thank you for playing. Goodbye!");
-                return false;
+                // return false;
+                System.exit(0); // We might change this later but at least the program ends.
         }
         
         return true;

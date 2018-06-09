@@ -118,4 +118,13 @@ public class GameControl {
         
     return 0;
     }
+        
+   int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
+       return 0;
+   }
+   
+   int liveTheYear() {
+       return 0;
+   }
+   
 }
