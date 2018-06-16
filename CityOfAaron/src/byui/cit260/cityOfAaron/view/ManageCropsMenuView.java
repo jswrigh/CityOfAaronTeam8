@@ -2,15 +2,11 @@ package byui.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
 
-import byui.cit260.cityOfAaron.model.*;
-import cityofaaron.*;
-import byui.cit260.cityOfAaron.view.GameMenuView;
-
 /**
  *
  * @author kanderson
  */
-public class StartNewGameView {
+public class ManageCropsMenuView {
     
     
     /**
@@ -21,8 +17,15 @@ public class StartNewGameView {
     /**
      * Constructor
      */
-    public StartNewGameView(){
-        message = " ";
+    public ManageCropsMenuView(){
+        
+        message = "This is the message that is printed to the user by this view.\n"
+                + "You have three tasks:\n"
+                + "1 - Replace this message text with the text that is specific to your view.\n"
+                + "2 - Replace this list with menu options that are specific to your view.\n"
+                + "\n"
+                + "3 - Prompt the user for what they are expected to enter.\n";
+                
     }
     
     
@@ -80,7 +83,7 @@ public class StartNewGameView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Please enter your name, or press Enter to return to the main menu.", true);
+        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -95,17 +98,16 @@ public class StartNewGameView {
      * should exit and return to the previous view.
      */
     public boolean doAction(String[] inputs){
+        // Act on the user's input.
+        // This is a "dispatch" function that decides what
+        // other functions to call. You can use an if-, if-else,
+        // or switch statement.
         
-        // If the user just hit Enter then bail out without doing the action
-        if(inputs[0] == null || inputs[0].equals("")){
-            System.out.println("No player name entered. Returning to the main menu.");
-            return false;
-        }
+        // return false if you want this view to exit and return
+        // to the view that called it.
+        someActionHandler();
         
-        String playerName = inputs[0];
-        createAndStartGame(playerName);
-        
-        return false;
+        return true;
     }
     
     
@@ -131,24 +133,14 @@ public class StartNewGameView {
     // complex game stuff in our doAction() method. It will get messy very quickly.
     
     
-    private void createAndStartGame(String playerName){
+    private boolean someActionHandler(){
+        // Define whatever code you need here to accomplish the action.
+        // You can make this a void method if you want. Whatever you need 
+        // here, you are free to do.
+        //
+        // Generally, though, this is where you will call into your Control
+        // classes to do the work of the application.
         
-        // Eventually you will do this: 
-        // Game game = GameControl.createNewGame(playerName);
-        // But for this week:
-        
-        Player player = new Player();
-        player.setName(playerName);
-        
-        Game game = new Game();
-        game.setThePlayer(player);
-        
-        CityOfAaron.setCurrentGame(game);
-        
-        System.out.println("");
-        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
-        
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayView();
+        return true;
     }
 }
