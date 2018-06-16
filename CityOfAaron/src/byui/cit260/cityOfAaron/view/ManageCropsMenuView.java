@@ -9,7 +9,8 @@ import java.util.Scanner;
 public class ManageCropsMenuView {
     
     
-    /**
+    /**N
+     * 
      * The message that will be displayed by this view.
      */
     protected String message;

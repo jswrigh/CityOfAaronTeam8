@@ -1,6 +1,9 @@
 package byui.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
+import cityofaaron.CityOfAaron;
+import byui.cit260.cityOfAaron.model.Game;
+import byui.cit260.cityOfAaron.control.GameControl;
 
 /**
  *
@@ -106,40 +109,37 @@ public class GameMenuView {
         // or switch statement.
     switch(inputs[0].trim().toUpperCase()){
             case "V" :
-                System.out.println("Your responsibility is to buy and sell land,\n" +
-                    "determine how much wheat to plant each year and how much to set aside to feed your\n" +
-                    "people. In addition, it will be your job to pay an annual tithe on the wheat that is\n" +
-                    "harvested. If you fail to provide enough wheat for the people, people will starve, some\n" +
-                    "people will die, and your workforce will be diminished. Plan carefully. And Oh, there is\n" +
-                    "always a danger of rats eating your wheat.\n");
+                viewTheMap();
                 break;
             
             case "M" :
-                System.out.println("The city of Aaron is near the land Bountiful\n");
+                System.out.println("Soon you will be able to move to a new location!\n");
                 break;
                 
             case "C" :
-                System.out.println("View the map by selecting the option on the map menu\n");
+                ManageCropsMenuView manageCropsMenu = new ManageCropsMenuView();
+                manageCropsMenu.displayView();
                 break;
 
             case "L" :
-                System.out.println("Move to another location by entering coordinates\n");
+                GameControl.liveTheYear();
                 break;            
 
             case "R" :
-                System.out.println("List the inventory by selecting the option on the inventory menu\n");
+                ReportsMenuView reportsMenu = new ReportsMenuView();
+                reportsMenu.displayView();
                 break;
                                 
             case "S" :
-                System.out.println("List the inventory by selecting the option on the inventory menu\n");
+                GameControl.saveGame("mygame.txt");
                 break;
                                 
             case "X" :
                 return false;
         }
-        // Help text will scroll above menu so let's pause for a few seconds first.
+        // Text will scroll above menu so let's pause for a few seconds first.
                 try {
-            Thread.sleep(4000);
+            Thread.sleep(3000);
         } catch(InterruptedException exception) {
             //Ignore for now
         }
@@ -180,6 +180,11 @@ public class GameMenuView {
         // Generally, though, this is where you will call into your Control
         // classes to do the work of the application.
         
+        return true;
+    }
+    
+    private boolean viewTheMap(){ //displaying it here for now instead of creating separate view
+        System.out.println("Here is the map.\n");
         return true;
     }
 }

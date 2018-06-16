@@ -120,10 +120,12 @@ public class GameControl {
     }
         
    int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
-       return 0;
+        System.out.println("Calculating the rating...");
+        return 0;
    }
    
-   int liveTheYear() {
+   static public int liveTheYear() {
+       System.out.println("Living the year...");
        return 0;
    }
    
