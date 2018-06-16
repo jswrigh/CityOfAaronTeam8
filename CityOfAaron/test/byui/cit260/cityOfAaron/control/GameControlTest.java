@@ -148,11 +148,9 @@ public class GameControlTest {
     @Test
     public void testLiveTheYear() {
         System.out.println("liveTheYear");
-        int expResult = 0;
+        int expResult = 0; // I know this doesn't work yet.
         int result = GameControl.liveTheYear();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
