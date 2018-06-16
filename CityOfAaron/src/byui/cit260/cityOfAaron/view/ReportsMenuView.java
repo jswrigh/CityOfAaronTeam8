@@ -19,13 +19,13 @@ public class ReportsMenuView {
      */
     public ReportsMenuView(){
         
-        message = "This is the message that is printed to the user by this view.\n"
-                + "You have three tasks:\n"
-                + "1 - Replace this message text with the text that is specific to your view.\n"
-                + "2 - Replace this list with menu options that are specific to your view.\n"
-                + "\n"
-                + "3 - Prompt the user for what they are expected to enter.\n";
-                
+        message = "Reports Menu\n"
+                + "------------\n"
+                + "A - Animals in the Storehouse\n"
+                + "T - Tools in the Storehouse\n"
+                + "P - Provisions in the Storehouse\n"
+                + "W - Authors who wrote this Game\n"
+                + "X - Back to Main Menu\n";
     }
     
     
@@ -83,7 +83,7 @@ public class ReportsMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
+        inputs[0] = getUserInput("What would you like to know about?");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -102,13 +102,37 @@ public class ReportsMenuView {
         // This is a "dispatch" function that decides what
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
-        
-        // return false if you want this view to exit and return
-        // to the view that called it.
-        someActionHandler();
-        
-        return true;
-    }
+       switch(inputs[0].trim().toUpperCase()){
+                case "A" :
+                    System.out.println("There are lots of animals.\n"); // should print actual values.
+                    break;
+
+                case "T" :
+                    System.out.println("There are lots of tools.\n"); // should print actual values.
+                    break;
+
+                case "P" :
+                    System.out.println("There are lots of provisions.\n"); // should print actual values.
+                     break;
+
+                case "W" :
+                    System.out.println("Sterling, Jacob, and Charlot wrote this!\n"); // should print values from variables.
+                    break;            
+
+                case "X" :
+                    return false;
+            }
+            // Text will scroll above menu so let's pause for a few seconds first.
+                    try {
+                Thread.sleep(3000);
+            } catch(InterruptedException exception) {
+                //Ignore for now
+            }
+
+            // return false if you want this view to exit and return
+            // to the view that called it.        
+            return true;
+    }    
     
     
     /**
