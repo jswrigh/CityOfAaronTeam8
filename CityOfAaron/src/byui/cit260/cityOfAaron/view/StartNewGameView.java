@@ -89,5 +89,6 @@ public class StartNewGameView extends ViewBase {
 
     @Override
     protected String getMessage() {
+        return "";
     }
 }
