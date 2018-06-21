@@ -103,51 +103,51 @@ public class GameMenuView {
      * should exit and return to the previous view.
      */
     public boolean doAction(String[] inputs){
-        // Act on the user's input.
-        // This is a "dispatch" function that decides what
-        // other functions to call. You can use an if-, if-else,
-        // or switch statement.
-    switch(inputs[0].trim().toUpperCase()){
-            case "V" :
-                viewTheMap();
-                break;
-            
-            case "M" :
-                System.out.println("Soon you will be able to move to a new location!\n");
-                break;
-                
-            case "C" :
-                ManageCropsMenuView manageCropsMenu = new ManageCropsMenuView();
-                manageCropsMenu.displayView();
-                break;
+    // Act on the user's input.
+    // This is a "dispatch" function that decides what
+    // other functions to call. You can use an if-, if-else,
+    // or switch statement.
+        switch(inputs[0].trim().toUpperCase()){
+                case "V" :
+                    viewTheMap();
+                    break;
 
-            case "L" :
-                GameControl.liveTheYear();
-                break;            
+                case "M" :
+                    System.out.println("Soon you will be able to move to a new location!\n");
+                    break;
 
-            case "R" :
-                ReportsMenuView reportsMenu = new ReportsMenuView();
-                reportsMenu.displayView();
-                break;
-                                
-            case "S" :
-                GameControl.saveGame("mygame.txt");
-                break;
-                                
-            case "X" :
-                return false;
+                case "C" :
+                    ManageCropsMenuView manageCropsMenu = new ManageCropsMenuView();
+                    manageCropsMenu.displayView();
+                    break;
+
+                case "L" :
+                    GameControl.liveTheYear();
+                    break;            
+
+                case "R" :
+                    ReportsMenuView reportsMenu = new ReportsMenuView();
+                    reportsMenu.displayView();
+                    break;
+
+                case "S" :
+                    GameControl.saveGame("mygame.txt");
+                    break;
+
+                case "X" :
+                    return false;
+            }
+            // Text will scroll above menu so let's pause for a few seconds first.
+                    try {
+                Thread.sleep(3000);
+            } catch(InterruptedException exception) {
+                //Ignore for now
+            }
+
+            // return false if you want this view to exit and return
+            // to the view that called it.        
+            return true;
         }
-        // Text will scroll above menu so let's pause for a few seconds first.
-                try {
-            Thread.sleep(3000);
-        } catch(InterruptedException exception) {
-            //Ignore for now
-        }
-
-        // return false if you want this view to exit and return
-        // to the view that called it.        
-        return true;
-    }
     
     
     /**

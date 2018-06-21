@@ -1,16 +1,15 @@
 package byui.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
-import byui.cit260.cityOfAaron.control.CropControl;
+
 /**
  *
  * @author kanderson
  */
-public class ManageCropsMenuView {
+public class ViewBase {
     
     
-    /**N
-     * 
+    /**
      * The message that will be displayed by this view.
      */
     protected String message;
@@ -18,16 +17,15 @@ public class ManageCropsMenuView {
     /**
      * Constructor
      */
-    public ManageCropsMenuView(){
+    public ViewBase(){
         
-        message = "Crops Menu\n"
-                + "----------\n"
-                + "B - Buy Land\n"
-                + "S - Sell Land\n"
-                + "F - Feed the People\n"
-                + "P - Plant Crops\n"
-                + "O - Pay Tithes and Offerings\n"
-                + "X - Back to Main Menu\n";                
+        message = "This is the message that is printed to the user by this view.\n"
+                + "You have three tasks:\n"
+                + "1 - Replace this message text with the text that is specific to your view.\n"
+                + "2 - Replace this list with menu options that are specific to your view.\n"
+                + "\n"
+                + "3 - Prompt the user for what they are expected to enter.\n";
+                
     }
     
     
@@ -85,7 +83,7 @@ public class ManageCropsMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("What would you like to do?");
+        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -100,45 +98,18 @@ public class ManageCropsMenuView {
      * should exit and return to the previous view.
      */
     public boolean doAction(String[] inputs){
-    // Act on the user's input.
-    // This is a "dispatch" function that decides what
-    // other functions to call. You can use an if-, if-else,
-    // or switch statement.
-        switch(inputs[0].trim().toUpperCase()){
-                case "B" :
-                    CropControl.buyLand(100); // temp value. Should prompt user.
-                    break;
-
-                case "S" :
-                    CropControl.sellLand(100); // temp value. Should prompt user.
-                    break;
-
-                case "F" :
-                    CropControl.feedPeople(100); // temp value. Should prompt user.
-                     break;
-
-                case "P" :
-                    CropControl.plantCrops(100); // temp value. Should prompt user.
-                    break;            
-
-                case "O" :
-                    CropControl.payTithesAndOfferings(100); // temp value. Should prompt user.
-                    break;
-
-                case "X" :
-                    return false;
-            }
-            // Text will scroll above menu so let's pause for a few seconds first.
-                    try {
-                Thread.sleep(3000);
-            } catch(InterruptedException exception) {
-                //Ignore for now
-            }
-
-            // return false if you want this view to exit and return
-            // to the view that called it.        
-            return true;
-    }    
+        // Act on the user's input.
+        // This is a "dispatch" function that decides what
+        // other functions to call. You can use an if-, if-else,
+        // or switch statement.
+        
+        // return false if you want this view to exit and return
+        // to the view that called it.
+        someActionHandler();
+        
+        return true;
+    }
+    
     
     /**
      * Control this view's display/prompt/action loop until the user
