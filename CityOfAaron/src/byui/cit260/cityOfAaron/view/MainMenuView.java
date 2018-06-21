@@ -24,7 +24,7 @@ public class MainMenuView {
                 + "N - Start a New Game\n"
                 + "L - Load a Saved Game\n"
                 + "H - Help Menu\n"
-                + "Q - Quit";
+                + "Q - Quit\n";
     }
     
     
@@ -82,7 +82,7 @@ public class MainMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
+        inputs[0] = getUserInput("Type a letter and press Enter to make a menu selection:");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -111,7 +111,7 @@ public class MainMenuView {
                 break;
                 
             case "Q" :
-                System.out.println("Thank you for playing. Goodbye!");
+                System.out.println("\nThank you for playing. Goodbye!\n");
                 return false;
         }
         
@@ -163,6 +163,6 @@ public class MainMenuView {
     }
     
     private void loadSavedGame(){
-        System.out.println("Load Saved Game called. Implementation coming soon.");
+        System.out.println("\nLoad Saved Game called. Implementation coming soon.\n");
     }
 }

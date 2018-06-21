@@ -22,12 +22,8 @@ public class StartNewGameView {
      */
     public StartNewGameView(){
         
-        message = "This is the message that is printed to the user by this view.\n"
-                + "You have three tasks:\n"
-                + "1 - Replace this message text with the text that is specific to your view.\n"
-                + "2 - Replace this list with menu options that are specific to your view.\n"
-                + "\n"
-                + "3 - Prompt the user for what they are expected to enter.\n";
+        message = "\nStart a New Game \n"
+                + "----------------";
                 
     }
     
@@ -104,7 +100,7 @@ public class StartNewGameView {
         
         // If the user just hit Enter then bail out without doing the action
         if(inputs[0] == null || inputs[0].equals("")){
-            System.out.println("No player name entered. Returning to the main menu.");
+            System.out.println("No player name entered. Returning to the main menu. \n");
             return false;
         }
         
@@ -152,9 +148,9 @@ public class StartNewGameView {
         CityOfAaron.setCurrentGame(game);
         
         System.out.println("");
-        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!/n"
-                + "Next week we will have a game menu view you will see. But for now, /n"
-                + "we're just going to send you back to the main menu."
+        System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
+                + "Next week we will have a game menu view you will see. But for now, \n"
+                + "we're just going to send you back to the main menu. \n"
                 );
         
         // Once the game view is created we will call it here.
