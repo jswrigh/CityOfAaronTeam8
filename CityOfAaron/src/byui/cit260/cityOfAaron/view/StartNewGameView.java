@@ -11,15 +11,12 @@ import byui.cit260.cityOfAaron.view.GameMenuView;
  * @author kanderson
  */
 public class StartNewGameView extends ViewBase {   
-     /**
-     * The message that will be displayed by this view.
-     */
-    protected String message;
-    
+
     /**
      * Constructor
      */
     public StartNewGameView(){
+        super();
     }    
     
     /**
@@ -89,6 +86,6 @@ public class StartNewGameView extends ViewBase {
 
     @Override
     protected String getMessage() {
-        return "";
+        return ""; // required to implement abstract method
     }
 }
