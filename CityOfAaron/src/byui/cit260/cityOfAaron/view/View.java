@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class defines the interface that is common to all views
  */
 package byui.cit260.cityOfAaron.view;
 
@@ -9,6 +7,9 @@ package byui.cit260.cityOfAaron.view;
  *
  * @author sterling
  */
-public class View {
-    
+public interface View {
+    /*
+    * Display the view. When this function returns, the view has exited.
+    */
+    public void displayView();
 }

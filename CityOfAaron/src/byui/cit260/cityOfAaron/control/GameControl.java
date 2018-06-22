@@ -120,8 +120,13 @@ public class GameControl {
     }
         
    int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
-        System.out.println("Calculating the rating...");
-        return 0;
+       if(currentInventory < 0 || population < 0) return -1;
+       if(startInventory <= 0 || startPopulation <= 0) return -1;
+       float populationGrowth = (float) (population-startPopulation)/startPopulation;
+       float inventoryGrowth = (float) (currentInventory-startInventory)/startInventory;
+       int finalRating = Math.round(populationGrowth*2 + inventoryGrowth);
+       if(finalRating < 0) finalRating = 0;
+       return finalRating;
    }
    
    static public int liveTheYear() {
