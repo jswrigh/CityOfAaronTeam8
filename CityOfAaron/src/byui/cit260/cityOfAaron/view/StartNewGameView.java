@@ -19,6 +19,11 @@ public class StartNewGameView extends ViewBase {
         super();
     }    
     
+    @Override
+    protected String getMessage() {
+        return ""; // required to implement abstract method, even though it isn't used in this instance.
+    }
+
     /**
      * Get the set of inputs from the user.
      * @return 
@@ -82,10 +87,5 @@ public class StartNewGameView extends ViewBase {
         
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayView();
-    }
-
-    @Override
-    protected String getMessage() {
-        return ""; // required to implement abstract method
     }
 }
