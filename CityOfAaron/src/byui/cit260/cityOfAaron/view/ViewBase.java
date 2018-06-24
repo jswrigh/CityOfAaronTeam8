@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author kanderson
  */
-public class HelpMenuView {
+public class ViewBase {
     
     
     /**
@@ -17,16 +17,14 @@ public class HelpMenuView {
     /**
      * Constructor
      */
-    public HelpMenuView(){
+    public ViewBase(){
         
-        message = "Main Menu\n"
-                + "---------\n"
-                + "G - Goals of the game\n"
-                + "L - Location of the city of Aaron\n"
-                + "V - How to view the map\n"
-                + "M - How to move to another location\n"
-                + "I - How to list the inventory\n"
-                + "X - Back to Main Menu\n";
+        message = "This is the message that is printed to the user by this view.\n"
+                + "You have three tasks:\n"
+                + "1 - Replace this message text with the text that is specific to your view.\n"
+                + "2 - Replace this list with menu options that are specific to your view.\n"
+                + "\n"
+                + "3 - Prompt the user for what they are expected to enter.\n";
                 
     }
     
@@ -85,7 +83,7 @@ public class HelpMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("How can I help?");
+        inputs[0] = getUserInput("Change this text to prompt the user for the input.");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -104,44 +102,11 @@ public class HelpMenuView {
         // This is a "dispatch" function that decides what
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
-    switch(inputs[0].trim().toUpperCase()){
-            case "G" :
-                System.out.println("Your responsibility is to buy and sell land,\n" +
-                    "determine how much wheat to plant each year and how much to set aside to feed your\n" +
-                    "people. In addition, it will be your job to pay an annual tithe on the wheat that is\n" +
-                    "harvested. If you fail to provide enough wheat for the people, people will starve, some\n" +
-                    "people will die, and your workforce will be diminished. Plan carefully. And Oh, there is\n" +
-                    "always a danger of rats eating your wheat.\n");
-                break;
-            
-            case "L" :
-                System.out.println("The city of Aaron is near the land Bountiful\n");
-                break;
-                
-            case "V" :
-                System.out.println("View the map by selecting the option on the map menu\n");
-                break;
-
-            case "M" :
-                System.out.println("Move to another location by entering coordinates\n");
-                break;            
-
-            case "I" :
-                System.out.println("List the inventory by selecting the option on the inventory menu\n");
-                break;
-                                
-            case "X" :
-                return false;
-        }
-        // Help text will scroll above menu so let's pause for a few seconds first.
-                try {
-            Thread.sleep(4000);
-        } catch(InterruptedException exception) {
-            //Ignore for now
-        }
-
+        
         // return false if you want this view to exit and return
-        // to the view that called it.        
+        // to the view that called it.
+        someActionHandler();
+        
         return true;
     }
     

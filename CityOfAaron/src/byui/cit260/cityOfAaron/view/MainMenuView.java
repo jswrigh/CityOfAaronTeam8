@@ -82,7 +82,7 @@ public class MainMenuView {
         // from the user.
         String[] inputs = new String[1];
         
-        inputs[0] = getUserInput("Type a letter and press Enter to make a menu selection:");
+        inputs[0] = getUserInput("Please enter your choice.");
         
         // Repeat for each input you need, putting it into its proper slot in the array.
         
@@ -111,8 +111,9 @@ public class MainMenuView {
                 break;
                 
             case "Q" :
-                System.out.println("\nThank you for playing. Goodbye!\n");
-                return false;
+                System.out.println("Thank you for playing. Goodbye!");
+                // return false;
+                System.exit(0); // We might change this later but at least the program ends.
         }
         
         return true;

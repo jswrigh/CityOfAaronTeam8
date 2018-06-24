@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import byui.cit260.cityOfAaron.model.*;
 import cityofaaron.*;
+import byui.cit260.cityOfAaron.view.GameMenuView;
 
 /**
  *
@@ -21,10 +22,7 @@ public class StartNewGameView {
      * Constructor
      */
     public StartNewGameView(){
-        
-        message = "\nStart a New Game \n"
-                + "----------------";
-                
+        message = " ";
     }
     
     
@@ -148,15 +146,9 @@ public class StartNewGameView {
         CityOfAaron.setCurrentGame(game);
         
         System.out.println("");
-        System.out.println("Welcome to the game, " + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n"
-                + "Next week we will have a game menu view you will see. But for now, \n"
-                + "we're just going to send you back to the main menu. \n"
-                );
+        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
         
-        // Once the game view is created we will call it here.
-        
-        // GameMenuView gameMenu = new GameMenuView();
-        
-        // GameMenu.displayView();
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayView();
     }
 }
