@@ -11,6 +11,12 @@ package byui.cit260.cityOfAaron.control;
  */
 public class CropControl {
     
+    //allow user to plant crops
+    public static int plantCrops(int acres) {
+        System.out.println("Planting crops...");
+        return 0;
+    }
+    
     //calcHarvest(offerings,previousCropYield,acres):double
     public static int harvestCrops(int offerings, int previousCropYield, int acres) {
         int yield = 0;
@@ -63,6 +69,29 @@ public class CropControl {
         return wheat-ratFood;
     }
     
+    //allow user to buy land
+    public static int buyLand(int acres) {
+        System.out.println("Buying land...");
+        return 0;
+    }
+
+    //allow user to sell land
+    public static int sellLand(int acres) {
+        System.out.println("Selling land...");
+        return 0;
+    }
+
+    //allow user to feed the people
+    public static int feedPeople(int bushels) {
+        System.out.println("Feeding people...");
+        return 0;
+    }
+
+    //allow user to feed the people
+    public static int payTithesAndOfferings(int offeringPercent) {
+        System.out.println("Paying tithes and offerings...");
+        return 0;
+    }
     
     public static int randomInt(int lower, int upper) {
         return upper; // replace with random int between lower and upper, inclusive
