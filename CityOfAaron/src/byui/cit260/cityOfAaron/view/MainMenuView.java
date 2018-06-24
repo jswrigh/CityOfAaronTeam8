@@ -1,7 +1,5 @@
 package byui.cit260.cityOfAaron.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author kanderson

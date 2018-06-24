@@ -1,7 +1,5 @@
 package byui.cit260.cityOfAaron.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author kanderson
@@ -17,6 +15,7 @@ public class HelpMenuView extends ViewBase {
         
     /**
      * Get the message that will be displayed by this view.
+     * @return
      */
     @Override
     protected String getMessage(){
@@ -92,6 +91,7 @@ public class HelpMenuView extends ViewBase {
         }
         // Help text will scroll above menu so let's pause for a few seconds first.
         pause(3000);
+        
         // return false if you want this view to exit and return
         // to the view that called it.        
         return true;
