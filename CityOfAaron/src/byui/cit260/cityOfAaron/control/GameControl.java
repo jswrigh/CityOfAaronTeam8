@@ -21,23 +21,6 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
     
-    public static int startGame(String playerName) {
-        try {
-            Game game = new Game();
-            game.setThePlayer(new Player());
-//            make this work: game.player.setName(playerName);
-//            also create actor here   
-            game.setTheMap(new Map());
-            /* The next lines depend on model classes that haven't been built yet
-            game.setTheWheat(new Wheat());
-            game.setTheLand(new Land());
-            game.setThePopulation(new Population());
-            */
-        } catch (Exception ex) {
-            return -1;
-        }
-        return 0;
-    }
        
     public static int loadGame(String fileName) {
         try {
@@ -77,7 +60,7 @@ public class GameControl {
     return 0;
     }
     
-        public static int saveGame(String fileName) {
+    public static int saveGame(String fileName) {
         
         /*
         try {
@@ -118,4 +101,20 @@ public class GameControl {
         
     return 0;
     }
+        
+   int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
+       if(currentInventory < 0 || population < 0) return -1;
+       if(startInventory <= 0 || startPopulation <= 0) return -1;
+       float populationGrowth = (float) (population-startPopulation)/startPopulation;
+       float inventoryGrowth = (float) (currentInventory-startInventory)/startInventory;
+       int finalRating = Math.round(populationGrowth*2 + inventoryGrowth);
+       if(finalRating < 0) finalRating = 0;
+       return finalRating;
+   }
+   
+   static public int liveTheYear() {
+       System.out.println("Living the year...");
+       return 0;
+   }
+   
 }
