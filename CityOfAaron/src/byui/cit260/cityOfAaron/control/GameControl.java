@@ -7,6 +7,7 @@ package byui.cit260.cityOfAaron.control;
 
 import java.io.Serializable;
 import byui.cit260.cityOfAaron.model.*;
+import cityofaaron.CityOfAaron;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +22,54 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
     
+/* basic algorithm for the method based on instructions
+ public static int createNewGame(Player player) {
+  if (player == null)
+   return -1
+  game = create a new Game object
+  Save a reference to the Player object in the game
+  Save a reference to the game in the main class
+  **** actors = createActors() WE DON'T HAVE TO DO THIS ****
+  **** Save the list of actors in the Game object ****
+  **** Assign an actor to the player ****
+  items = createItems()
+  Save the list of items in the game
+  map = createMap(noOfRows, noOfColumns, items)
+  IF map == null THEN
+   RETURN -1
+  ENDIF
+  Assign the map to the game
+  RETURN 1 // indicates success }
+ */
+ public static int createNewGame (Player player) {
+    if (player == null) {
+        return -1;
+    }
+    Game game = new Game();
+    game.setThePlayer(player);
+    CityOfAaron.setCurrentGame(game);
+    game.setTheStorehouse(createItems());
+    game.setTheMap(MapControl.createMap());
+ }
+ 
+ public static InventoryItem[] createItems() {
+  /* algorithm for this method based on instructions
+  public static InventoryItem createItems() {
+   items = create an array InventoryItem objects
+   item1 = new InventoryItem object
+   Assign values to each attribute in the InventoryItem object
+   Assign items1 to a position in the items array
+   item2 = new InventoryItem object
+   Assign values to each attribute in the InventoryItem object
+   Assign items2 to a position in the items array
+   …
+   …
+   RETURN items
+  }
+  */
+  return null;
+ }
+ 
        
     public static int loadGame(String fileName) {
         try {
