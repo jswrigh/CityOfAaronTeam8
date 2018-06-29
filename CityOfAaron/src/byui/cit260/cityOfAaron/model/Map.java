@@ -13,18 +13,18 @@ import java.io.Serializable;
  */
 
 public class Map implements Serializable {
-    private Location locations;
+    private Location[][] locations;
     private Point currentLocation;
 
     public Map() {
         // Empty Constructor for JavaBeans
     }
     
-    public Location getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 
-    public void setLocations(Location locations) {
+    public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
 
