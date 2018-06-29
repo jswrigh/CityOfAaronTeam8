@@ -48,11 +48,26 @@ public class GameControl {
     Game game = new Game();
     game.setThePlayer(player);
     CityOfAaron.setCurrentGame(game);
-    game.setTheStorehouse(createItems());
-    game.setTheMap(MapControl.createMap());
+    Storehouse storehouse = new Storehouse();
+    InventoryItem[] items = new InventoryItem[2];
+    items = createItems("animal");
+    storehouse.setAnimals(items);
+    items = createItems("tool");
+    storehouse.setTools(items);
+    items = createItems("provision");
+    storehouse.setProvisions(items);
+    
+    game.setTheStorehouse(storehouse);
+    
+    Map map = MapControl.createMap(5, 5);
+        if(map==null){
+           return -1;
+    }
+    game.setTheMap(map);
+    return 0;
  }
  
- public static InventoryItem[] createItems() {
+ public static InventoryItem[] createItems(String itemType) {
   /* algorithm for this method based on instructions
   public static InventoryItem createItems() {
    items = create an array InventoryItem objects
@@ -67,7 +82,35 @@ public class GameControl {
    RETURN items
   }
   */
-  return null;
+    InventoryItem[] items = new InventoryItem[2];
+    switch(itemType) {
+        case "animal" :
+            items[0].setItemType(ItemType.Animal);
+            items[0].setQuantity(3);
+            items[0].setCondition(Condition.Good);
+            items[1].setItemType(ItemType.Animal);
+            items[1].setQuantity(2);
+            items[1].setCondition(Condition.Poor);
+            break;
+        case "tool" :
+            items[0].setItemType(ItemType.Tool);
+            items[0].setQuantity(3);
+            items[0].setCondition(Condition.Good);
+            items[1].setItemType(ItemType.Tool);
+            items[1].setQuantity(2);
+            items[1].setCondition(Condition.Poor);
+            break;
+        case "provision" :
+            items[0].setItemType(ItemType.Provisions);
+            items[0].setQuantity(3);
+            items[0].setCondition(Condition.Good);
+            items[1].setItemType(ItemType.Provisions);
+            items[1].setQuantity(2);
+            items[1].setCondition(Condition.Poor);
+            break;
+    }
+    
+  return items;
  }
  
        
