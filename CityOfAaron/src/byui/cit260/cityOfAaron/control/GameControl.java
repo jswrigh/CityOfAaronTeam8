@@ -50,11 +50,11 @@ public class GameControl {
     CityOfAaron.setCurrentGame(game);
     Storehouse storehouse = new Storehouse();
     InventoryItem[] items = new InventoryItem[2];
-    items = createItems("animal");
+    items = createItems(ItemType.Animal);
     storehouse.setAnimals(items);
-    items = createItems("tool");
+    items = createItems(ItemType.Tool);
     storehouse.setTools(items);
-    items = createItems("provision");
+    items = createItems(ItemType.Provisions);
     storehouse.setProvisions(items);
     
     game.setTheStorehouse(storehouse);
@@ -67,7 +67,7 @@ public class GameControl {
     return 0;
  }
  
- public static InventoryItem[] createItems(String itemType) {
+ public static InventoryItem[] createItems(ItemType itemType) {
   /* algorithm for this method based on instructions
   public static InventoryItem createItems() {
    items = create an array InventoryItem objects
@@ -83,8 +83,11 @@ public class GameControl {
   }
   */
     InventoryItem[] items = new InventoryItem[2];
+    for(int i=0; i<items.length; i++) { // create objects
+        items[i] = new InventoryItem();
+    }
     switch(itemType) {
-        case "animal" :
+        case Animal :
             items[0].setItemType(ItemType.Animal);
             items[0].setQuantity(3);
             items[0].setCondition(Condition.Good);
@@ -92,7 +95,7 @@ public class GameControl {
             items[1].setQuantity(2);
             items[1].setCondition(Condition.Poor);
             break;
-        case "tool" :
+        case Tool :
             items[0].setItemType(ItemType.Tool);
             items[0].setQuantity(3);
             items[0].setCondition(Condition.Good);
@@ -100,7 +103,7 @@ public class GameControl {
             items[1].setQuantity(2);
             items[1].setCondition(Condition.Poor);
             break;
-        case "provision" :
+        case Provisions :
             items[0].setItemType(ItemType.Provisions);
             items[0].setQuantity(3);
             items[0].setCondition(Condition.Good);
