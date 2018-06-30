@@ -13,6 +13,8 @@ import byui.cit260.cityOfAaron.model.Point;
  *
  * @author sterling
  */
+
+
 public class MapControl {
 
 /* Algorithm for the createMap() method from assignment instructions
