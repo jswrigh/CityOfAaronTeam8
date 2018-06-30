@@ -50,6 +50,11 @@ public class GameControl {
     CityOfAaron.setCurrentGame(game);
     Storehouse storehouse = new Storehouse();
     InventoryItem[] items = new InventoryItem[2];
+    
+    for(int i=0; i<items.length; i++) { // create objects
+        items[i] = new InventoryItem();
+    }
+    
     items = createItems(ItemType.Animal);
     storehouse.setAnimals(items);
     items = createItems(ItemType.Tool);
