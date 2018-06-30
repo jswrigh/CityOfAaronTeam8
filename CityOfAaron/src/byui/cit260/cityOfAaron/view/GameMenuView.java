@@ -4,6 +4,8 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityOfAaron.model.Game;
 import byui.cit260.cityOfAaron.control.GameControl;
+import byui.cit260.cityOfAaron.model.Location;
+import byui.cit260.cityOfAaron.model.Map;
 
 /**
  *
@@ -105,7 +107,8 @@ public class GameMenuView extends ViewBase{
 public void displayMap(){
  game = get the currentGame from the main class
  locations = get the 2-D locations array from the map
- Print the title Print the column numbers for each column
+ Print the title
+ Print the column numbers for each column
  for every row in map
   Print a row divider
   Print the row number on a new line
@@ -125,8 +128,27 @@ public void displayMap(){
 }
 */
 
-    private boolean viewTheMap(){ //displaying it here for now instead of creating separate view
-        System.out.println("Here is the map.\n");
-        return true;
+    public void viewTheMap(){ //displaying it here for now instead of creating separate view
+        Game game = CityOfAaron.getCurrentGame();
+        Map map = game.getTheMap();
+        Location[][] locations = map.getLocations();
+        Location location;
+        System.out.print("Here is the map.\n");
+        System.out.print    ("  1 2 3 4 5 \n");
+        for(int r = 0; r < locations.length; r++) {
+            System.out.print("-----------\n");
+            System.out.print(r+1+"|");
+            for(int c = 0; c < locations.length; c++) {
+                location=locations[r][c];
+                if(location.getVisited()) {
+                    System.out.print(location.getMapSymbol());
+                } else {
+                    System.out.print("?");
+                }
+                System.out.print("|");
+            }
+            System.out.print("\n");
+        }
+        System.out.print("-----------\n");       
     }
 }

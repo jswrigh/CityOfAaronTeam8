@@ -85,8 +85,8 @@ public class StartNewGameView extends ViewBase {
         
         CityOfAaron.setCurrentGame(game);
         */
-    // Now we're ready to make the call as outlined in comments at top of this method.    
-        Game game = GameControl.createNewGame(playerName);
+    // Now we're ready to make the call as outlined in comments at top of this method. 
+        GameControl.createNewGame(player);
         
         System.out.println("");
         System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");

@@ -6,6 +6,7 @@
 package byui.cit260.cityOfAaron.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -13,18 +14,18 @@ import java.io.Serializable;
  */
 
 public class Map implements Serializable {
-    private Location locations;
+    private Location locations[][];
     private Point currentLocation;
 
     public Map() {
         // Empty Constructor for JavaBeans
     }
     
-    public Location getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 
-    public void setLocations(Location locations) {
+    public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
 
@@ -38,7 +39,7 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "locations=" + locations 
+        return "Map{" + "locations=" + Arrays.toString(locations) 
                 + ", currentLocation=" + currentLocation + '}';
     }  
 }

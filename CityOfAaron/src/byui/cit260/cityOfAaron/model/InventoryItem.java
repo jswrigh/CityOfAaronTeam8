@@ -19,6 +19,11 @@ public class InventoryItem implements Serializable{
     public InventoryItem() {
     }
 
+    public InventoryItem(ItemType newItemType, int newQuantity, Condition newCondition){
+        this.itemType = newItemType;
+        this.quantity = newQuantity;
+        this.condition = newCondition;
+    }
     
     public ItemType getItemType() {
         return itemType;
