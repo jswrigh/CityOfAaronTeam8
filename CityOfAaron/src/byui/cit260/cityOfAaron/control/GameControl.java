@@ -59,7 +59,7 @@ public class GameControl {
     
     game.setTheStorehouse(storehouse);
     
-    Map map = MapControl.createMap(5, 5);
+    Map map = MapControl.createMap(5, 5, items);
         if(map==null){
            return -1;
     }
