@@ -83,19 +83,21 @@ public class GameControl {
   }
   */
     InventoryItem[] items = new InventoryItem[2];
-    for(int i=0; i<items.length; i++) { // create objects
-        items[i] = new InventoryItem();
-    }
     switch(itemType) {
         case Animal :
+            items[0] = new InventoryItem();
             items[0].setItemType(ItemType.Animal);
             items[0].setQuantity(3);
             items[0].setCondition(Condition.Good);
+            items[1] = new InventoryItem();
             items[1].setItemType(ItemType.Animal);
             items[1].setQuantity(2);
             items[1].setCondition(Condition.Poor);
             break;
         case Tool :
+            for(int i=0; i<items.length; i++) { // create objects
+                items[i] = new InventoryItem();
+            }
             items[0].setItemType(ItemType.Tool);
             items[0].setQuantity(3);
             items[0].setCondition(Condition.Good);
@@ -104,15 +106,9 @@ public class GameControl {
             items[1].setCondition(Condition.Poor);
             break;
         case Provisions :
-            items[0].setItemType(ItemType.Provisions);
-            items[0].setQuantity(3);
-            items[0].setCondition(Condition.Good);
-            items[1].setItemType(ItemType.Provisions);
-            items[1].setQuantity(2);
-            items[1].setCondition(Condition.Poor);
+            items[0] = new InventoryItem(ItemType.Provisions, 3, Condition.Good);
             break;
-    }
-    
+    }    
   return items;
  }
  
