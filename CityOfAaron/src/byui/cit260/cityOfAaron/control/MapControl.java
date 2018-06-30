@@ -51,7 +51,7 @@ public static Map createMap( int noOfRows,
      map.setLocations(locations);
      return map;
  }
- 
+    
 /* Algorithm for the createLocations() method from assignment instructions
  public static Location[][] createLocations(int rows, int columns) {
  IF rows < 1 OR columns < 1 THEN
@@ -88,4 +88,4 @@ public static Map createMap( int noOfRows,
     locations[2][2].setMapSymbol("$");
     return locations;
  }    
-}
+        }
