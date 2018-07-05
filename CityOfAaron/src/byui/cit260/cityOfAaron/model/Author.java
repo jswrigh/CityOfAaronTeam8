@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.cityOfAaron.model;
 
 import java.io.Serializable;
@@ -20,8 +15,6 @@ public class Author implements Serializable{
     public Author() {
     }
     
-    
-
     public String getName() {
         return name;
     }
@@ -43,8 +36,4 @@ public class Author implements Serializable{
     public String toString() {
         return "Author{" + "name=" + name + ", title=" + title + '}';
     }
-
- 
-    
-    
 }

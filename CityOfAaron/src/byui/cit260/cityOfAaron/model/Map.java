@@ -7,7 +7,6 @@ package byui.cit260.cityOfAaron.model;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
 /**
  *
  * @author Jacob

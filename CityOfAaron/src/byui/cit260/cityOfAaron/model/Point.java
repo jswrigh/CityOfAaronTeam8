@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.cityOfAaron.model;
 
 import java.io.Serializable;
@@ -12,13 +7,12 @@ import java.io.Serializable;
  * @author Charlot
  */ 
 public class Point implements Serializable{
-  private int row;
-  private int column;
+    private int row;
+    private int column;
 
     public Point() {
     }
-  
-  
+   
     public int getRow() {
         return row;
     }
@@ -68,7 +62,5 @@ public class Point implements Serializable{
     public String toString() {
         return "Point{" + "row=" + row + ", column=" + column + '}';
     }
-    
-  
 }
 
