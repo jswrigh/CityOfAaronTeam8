@@ -140,11 +140,7 @@ public void displayMap(){
             System.out.print(r+1+"|");
             for(int c = 0; c < locations.length; c++) {
                 location=locations[r][c];
-                if(location.getVisited()) {
-                    System.out.print(location.getMapSymbol());
-                } else {
-                    System.out.print("?");
-                }
+                System.out.print(location.getMapSymbol());
                 System.out.print("|");
             }
             System.out.print("\n");
