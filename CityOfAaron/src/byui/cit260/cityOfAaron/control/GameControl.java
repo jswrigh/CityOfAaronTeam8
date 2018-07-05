@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.cityOfAaron.control;
 
 import java.io.Serializable;
@@ -64,10 +59,10 @@ public class GameControl {
     
     game.setTheStorehouse(storehouse);
     
-    Map map = MapControl.createMap(5, 5, items);
+    Map map = MapControl.createMap(5, 5);
         if(map==null){
            return -1;
-    }
+        }
     game.setTheMap(map);
     return 0;
  }
