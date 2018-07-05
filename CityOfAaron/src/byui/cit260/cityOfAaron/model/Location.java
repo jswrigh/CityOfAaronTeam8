@@ -16,7 +16,6 @@ public class Location implements Serializable {
     private String description;
     private String mapSymbol;
     private String[] gameTips;
-    private boolean visited;
     
     public Location() {
         // Empty Constructor for JavaBeans
@@ -54,21 +53,12 @@ public class Location implements Serializable {
         this.gameTips = gameTips;
     }
 
-    public boolean getVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
     @Override
     public String toString() {
         return "Location{" 
                 + "name=" + name 
                 + ", description=" + description 
                 + ", mapSymbol=" + mapSymbol 
-                + ", gameTips=" + gameTips
-                + ", visited=" + '}';
+                + ", gameTips=" + gameTips + '}';
     }
 }
