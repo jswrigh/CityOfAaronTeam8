@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Charlot
  */
-public class Animal implements Serializable{
+public class Animal extends InventoryItem implements Serializable{
    
     private String name;
     private int age;
