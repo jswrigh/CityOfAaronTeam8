@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Charlot
  */
-public class Provision implements Serializable{
+public class Provision extends InventoryItem implements Serializable{
     
     private String name;
     private boolean perishable;
