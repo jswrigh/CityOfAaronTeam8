@@ -6,6 +6,7 @@ import byui.cit260.cityOfAaron.model.Game;
 import byui.cit260.cityOfAaron.control.GameControl;
 import byui.cit260.cityOfAaron.model.Location;
 import byui.cit260.cityOfAaron.model.Map;
+import byui.cit260.cityOfAaron.exceptions.GameControlException;
 
 /**
  *
@@ -66,36 +67,41 @@ public class GameMenuView extends ViewBase{
     // This is a "dispatch" function that decides what
     // other functions to call. You can use an if-, if-else,
     // or switch statement.
-        switch(inputs[0].trim().toUpperCase()){
-                case "V" :
-                    viewTheMap();
-                    break;
+        try {
+            switch(inputs[0].trim().toUpperCase()){
+                    case "V" :
+                        viewTheMap();
+                        break;
 
-                case "M" :
-                    System.out.println("Soon you will be able to move to a new location!\n");
-                    break;
+                    case "M" :
+                        System.out.println("Soon you will be able to move to a new location!\n");
+                        break;
 
-                case "C" :
-                    ManageCropsMenuView manageCropsMenu = new ManageCropsMenuView();
-                    manageCropsMenu.displayView();
-                    break;
+                    case "C" :
+                        ManageCropsMenuView manageCropsMenu = new ManageCropsMenuView();
+                        manageCropsMenu.displayView();
+                        break;
 
-                case "L" :
-                    GameControl.liveTheYear();
-                    break;            
+                    case "L" :
+                        GameControl.liveTheYear();
+                        break;            
 
-                case "R" :
-                    ReportsMenuView reportsMenu = new ReportsMenuView();
-                    reportsMenu.displayView();
-                    break;
+                    case "R" :
+                        ReportsMenuView reportsMenu = new ReportsMenuView();
+                        reportsMenu.displayView();
+                        break;
 
-                case "S" :
-                    GameControl.saveGame("mygame.txt");
-                    break;
+                    case "S" :
+                        GameControl.saveGame("mygame.txt");
+                        break;
 
-                case "X" :
-                    return false;
-            }
+                    case "X" :
+                        return false;
+                }
+        } catch (GameControlException ge) {
+                System.out.println(ge.getMessage());
+                return false;
+        }
             // Text will scroll above menu so let's pause for a few seconds first.
             pause(2000);
             

@@ -2,6 +2,7 @@ package byui.cit260.cityOfAaron.control;
 
 import java.io.Serializable;
 import byui.cit260.cityOfAaron.model.*;
+import byui.cit260.cityOfAaron.exceptions.GameControlException;
 import cityofaaron.CityOfAaron;
 
 import java.io.File;
@@ -36,9 +37,9 @@ public class GameControl {
   Assign the map to the game
   RETURN 1 // indicates success }
  */
- public static int createNewGame (Player player) {
+ public static int createNewGame (Player player) throws GameControlException {
     if (player == null) {
-        return -1;
+        throw new GameControlException("Cannot create new game without a valid player.");
     }
     Game game = new Game();
     game.setThePlayer(player);
@@ -61,7 +62,7 @@ public class GameControl {
     
     Map map = MapControl.createMap(5, 5);
         if(map==null){
-           return -1;
+            throw new GameControlException("Map cannot be empty.");
         }
     game.setTheMap(map);
     return 0;
@@ -194,8 +195,12 @@ public class GameControl {
     }
         
    int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
-       if(currentInventory < 0 || population < 0) return -1;
-       if(startInventory <= 0 || startPopulation <= 0) return -1;
+       if(currentInventory < 0 || population < 0) {
+            throw new GameControlException("Curent inventory or population can't be less than zero.");
+       }
+       if(startInventory <= 0 || startPopulation <= 0) {
+            throw new GameControlException("Starting population can't be less than zero.");
+       }
        float populationGrowth = (float) (population-startPopulation)/startPopulation;
        float inventoryGrowth = (float) (currentInventory-startInventory)/startInventory;
        int finalRating = Math.round(populationGrowth*2 + inventoryGrowth);
@@ -204,7 +209,21 @@ public class GameControl {
    }
    
    static public int liveTheYear() {
-       System.out.println("Living the year...");
+       Game game = new Game();
+       game = CityOfAaron.getCurrentGame();
+       System.out.print("Living year ");
+       int currentYear = game.getCurrentYear();
+       System.out.println(currentYear);
+       if(currentYear == 10) {
+           try {
+               int finalRating = calculateRating(game.getCurrentInventory, game.getStartInventory, game.getCurrentPopulation(), game.getStartPopulation);
+           } catch (GameControlException ge) {
+                System.out.println(ge.getMessage());
+                return false;
+           }
+           return finalRating;
+       }
+       game.setCurrentYear(currentYear++);
        return 0;
    }
    
