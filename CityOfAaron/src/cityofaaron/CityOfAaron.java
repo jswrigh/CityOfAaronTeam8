@@ -27,22 +27,27 @@ import byui.cit260.cityOfAaron.view.StartProgramView;
  */
 public class CityOfAaron {
 
-    public static Game currentGame = null;
-    
-    public static Game getCurrentGame(){
-        return currentGame;
-    }
-    
-    public static void setCurrentGame(Game game){
-        currentGame = game;
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+        public static Game currentGame = null;
 
-        View startProgramView = new StartProgramView();
-        startProgramView.displayView();
-    }
+        public static Game getCurrentGame(){
+            return currentGame;
+        }
+
+        public static void setCurrentGame(Game game){
+            currentGame = game;
+        }
+
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+
+            try {
+                View startProgramView = new StartProgramView();
+                startProgramView.displayView();
+            } catch(Throwable te){
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+            }
+        }
 }

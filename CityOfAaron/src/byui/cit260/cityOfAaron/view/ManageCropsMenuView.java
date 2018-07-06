@@ -1,6 +1,8 @@
 package byui.cit260.cityOfAaron.view;
 
 import byui.cit260.cityOfAaron.control.CropControl;
+import byui.cit260.cityOfAaron.exceptions.CropControlException;
+import static java.lang.Integer.parseInt;
 /**
  *
  * @author kanderson
@@ -52,34 +54,69 @@ public class ManageCropsMenuView extends ViewBase {
      */
     @Override
     public boolean doAction(String[] inputs){
-    // Act on the user's input.
-    // This is a "dispatch" function that decides what
-    // other functions to call. You can use an if-, if-else,
-    // or switch statement.
-        switch(inputs[0].trim().toUpperCase()){
-                case "B" :
-                    CropControl.buyLand(100); // temp value. Should prompt user.
-                    break;
+    
+       try {
+            // Act on the user's input.
+            // This is a "dispatch" function that decides what
+            // other functions to call. You can use an if-, if-else,
+            // or switch statement.
+            switch(inputs[0].trim().toUpperCase()){
+                    case "B" :
+                        String landInput = new String();        
+                        landInput = getUserInput("How much land do you want to buy?");
+                        
+                        int land = parseInt(landInput);
+                        CropControl.buyLand(land);
+                        
+                        break;
 
-                case "S" :
-                    CropControl.sellLand(100); // temp value. Should prompt user.
-                    break;
+                    case "S" :
+                        String sellInput = new String();        
+                        sellInput = getUserInput("How much land do you want to sell?");
+                        
+                        land = parseInt(sellInput);
+                        CropControl.sellLand(land);
+                        
+                        break;
 
-                case "F" :
-                    CropControl.feedPeople(100); // temp value. Should prompt user.
-                     break;
+                    case "F" :
+                        String feedInput = new String();        
+                        feedInput = getUserInput("How many bushels do you want to feed the people?");
+                        
+                        int food = parseInt(feedInput);
+                        CropControl.feedPeople(food);
+                        
+                        break;
 
-                case "P" :
-                    CropControl.plantCrops(100); // temp value. Should prompt user.
-                    break;            
+                    case "P" :
+                        String plantInput = new String();        
+                        plantInput = getUserInput("How many bushels do you want to plant?");
+                        
+                        int plant = parseInt(plantInput);
+                        CropControl.plantCrops(plant);
+                        
+                        break;
 
-                case "O" :
-                    CropControl.payTithesAndOfferings(100); // temp value. Should prompt user.
-                    break;
+                    case "O" :
+                        String offeringsInput = new String();        
+                        offeringsInput = getUserInput("How many bushels do you want to pay in offerings?");
+                        
+                        int offerings = parseInt(offeringsInput);
+                        CropControl.payTithesAndOfferings(offerings);
+                        
+                        break;
 
-                case "X" :
-                    return false;
+                    case "X" :
+                        return false;
+                }
+            } catch(CropControlException ce) {
+                System.out.println(ce.getMessage());
+                return false;
+            } catch(NumberFormatException ne) {
+                System.out.println("Invalid number.");
+                return false;
             }
+        
             // Help text will scroll above menu so let's pause for a few seconds first.
             pause(3000);
 

@@ -1,28 +1,29 @@
 package byui.cit260.cityOfAaron.control;
 
+import byui.cit260.cityOfAaron.exceptions.CropControlException;
+
 /**
  *
- * @author jacob
+ * @author Jacob & Sterling
  */
 public class CropControl {
     
     //allow user to plant crops
-    public static int plantCrops(int acres) {
+    public static void plantCrops(int acres) throws CropControlException {
         System.out.println("Planting crops...");
-        return 0;
     }
     
     //calcHarvest(offerings,previousCropYield,acres):double
-    public static int harvestCrops(int offerings, int previousCropYield, int acres) {
+    public static int harvestCrops(int offerings, int previousCropYield, int acres) throws CropControlException {
         int yield = 0;
         if (offerings < 0) {
-            return -1;
+            throw new CropControlException("Offerings cannot be negative.");
         }
         if (previousCropYield < 0) {
-            return -1;
+            throw new CropControlException("Crop yield cannot be negative.");
         }
         if (acres < 0) {
-            return -1;
+            throw new CropControlException("Acres cannot be negative.");
         }
         if (offerings < .08*previousCropYield) {
             yield = randomInt(1,3);
@@ -37,13 +38,13 @@ public class CropControl {
     }
     
     //calculateRatFood(offerings,wheat):double
-    public static int calcRatFood(int offerings, int wheat) {
+    public static int calcRatFood(int offerings, int wheat) throws CropControlException {
 
         if (offerings < 0) {
-            return -1;
+            throw new CropControlException("Offerings cannot be negative.");
         }
         if (wheat < 0) {
-            return -1;
+            throw new CropControlException("Wheat cannot be negative.");
         }
         
         int ratAttack = randomInt(1,29);
@@ -65,27 +66,43 @@ public class CropControl {
     }
     
     //allow user to buy land
-    public static int buyLand(int acres) {
+    public static void buyLand(int acres) throws CropControlException {
+        
+        if (acres < 0) {
+            throw new CropControlException("Acres cannot be negative.");
+        }
+        
         System.out.println("Buying land...");
-        return 0;
     }
 
     //allow user to sell land
-    public static int sellLand(int acres) {
+    public static void sellLand(int acres) throws CropControlException {
+        
+        if (acres < 0) {
+            throw new CropControlException("Acres cannot be negative.");
+        }
+        
         System.out.println("Selling land...");
-        return 0;
     }
 
     //allow user to feed the people
-    public static int feedPeople(int bushels) {
+    public static void feedPeople(int bushels) throws CropControlException {
+        
+        if (bushels < 0) {
+            throw new CropControlException("Bushels cannot be negative.");
+        }
+        
         System.out.println("Feeding people...");
-        return 0;
     }
 
     //allow user to feed the people
-    public static int payTithesAndOfferings(int offeringPercent) {
+    public static void payTithesAndOfferings(int offerings) throws CropControlException {
+        
+        if (offerings < 0) {
+            throw new CropControlException("Offerings cannot be negative.");
+        }
+        
         System.out.println("Paying tithes and offerings...");
-        return 0;
     }
     
     public static int randomInt(int lower, int upper) {

@@ -1,5 +1,7 @@
 package byui.cit260.cityOfAaron.view;
 
+import byui.cit260.cityOfAaron.model.InventoryItem;
+
 /**
  *
  * @author kanderson
@@ -71,6 +73,13 @@ public class ReportsMenuView extends ViewBase {
                     break;
 
                 case "P" :
+                    InventoryItem[] items = new InventoryItem[3];
+                    
+                    for (InventoryItem item : items) {
+                        
+                    }
+                    
+                    
                     System.out.println("There are lots of provisions.\n"); // should print actual values.
                      break;
 
