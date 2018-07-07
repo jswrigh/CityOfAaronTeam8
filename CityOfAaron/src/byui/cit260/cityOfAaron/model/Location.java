@@ -16,6 +16,13 @@ public class Location implements Serializable {
         // Empty Constructor for JavaBeans
     }
 
+    public Location(String name, String description, String mapSymbol, String[] gameTips) {
+        this.name = name;
+        this.description = description;
+        this.mapSymbol = mapSymbol;
+        this.gameTips = gameTips;
+    }
+
     public String getName() {
         return name;
     }
