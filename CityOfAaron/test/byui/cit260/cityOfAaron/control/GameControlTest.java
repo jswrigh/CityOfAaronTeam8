@@ -5,6 +5,7 @@
  */
 package byui.cit260.cityOfAaron.control;
 
+import byui.cit260.cityOfAaron.exceptions.GameControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,17 +18,6 @@ public class GameControlTest {
     public GameControlTest() {
     }
 
-    /**
-     * Test of startGame method, of class GameControl.
-     */
-    @Test
-    public void testStartGame() {
-        System.out.println("startGame");
-        String playerName = "";
-        int expResult = 0;
-        int result = GameControl.startGame(playerName);
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of loadGame method, of class GameControl.
@@ -60,7 +50,7 @@ public class GameControlTest {
     }
     
     @Test
-    public void testCalculateRating1() {
+    public void testCalculateRating1() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = 6000;
         int startInventory = 2700;
@@ -73,7 +63,7 @@ public class GameControlTest {
         // TODO review the generated test code and remove the default call to fail.
     }
     @Test
-    public void testCalculateRating2() {
+    public void testCalculateRating2() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = -1;
         int startInventory = 2700;
@@ -87,7 +77,7 @@ public class GameControlTest {
     }
 
     @Test
-    public void testCalculateRating3() {
+    public void testCalculateRating3() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = 6000;
         int startInventory = 2700;
@@ -101,7 +91,7 @@ public class GameControlTest {
     }
 
     @Test
-    public void testCalculateRating4() {
+    public void testCalculateRating4() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = 60000;
         int startInventory = 2700;
@@ -115,7 +105,7 @@ public class GameControlTest {
     }
 
     @Test
-    public void testCalculateRating5() {
+    public void testCalculateRating5() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = 1;
         int startInventory = 2700;
@@ -129,7 +119,7 @@ public class GameControlTest {
     }
 
     @Test
-    public void testCalculateRating6() {
+    public void testCalculateRating6() throws GameControlException {
         System.out.println("calculateRating1");
         int currentInventory = 1000000;
         int startInventory = 2700;
@@ -146,7 +136,7 @@ public class GameControlTest {
      * Test of liveTheYear method, of class GameControl.
      */
     @Test
-    public void testLiveTheYear() {
+    public void testLiveTheYear() throws GameControlException {
         System.out.println("liveTheYear");
         int expResult = 0; // I know this doesn't work yet.
         int result = GameControl.liveTheYear();

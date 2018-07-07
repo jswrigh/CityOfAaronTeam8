@@ -1,5 +1,8 @@
 package byui.cit260.cityOfAaron.control;
 
+import byui.cit260.cityOfAaron.exceptions.CropControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,7 +33,12 @@ public class CropControlTest {
         int expResult = 4800; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);
@@ -49,7 +57,12 @@ public class CropControlTest {
         int expResult = -1; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);
@@ -68,7 +81,12 @@ public class CropControlTest {
         int expResult = -1; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);   
@@ -87,7 +105,12 @@ public class CropControlTest {
         int expResult = -1; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result); 
@@ -106,7 +129,12 @@ public class CropControlTest {
         int expResult = 3600; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);  
@@ -125,7 +153,12 @@ public class CropControlTest {
         int expResult = 6000; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);   
@@ -144,7 +177,12 @@ public class CropControlTest {
         int expResult = 0; // define the expected result variable
         
         // call the method
-        int result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        int result = 0;
+        try {
+            result = CropControl.harvestCrops(offerings, previousCropYield, acres);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // test to see if the result returned equals the expected result
         assertEquals(expResult, result);   
@@ -183,7 +221,12 @@ public class CropControlTest {
         int expResult = 465;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -203,7 +246,12 @@ public class CropControlTest {
         int expResult = -1;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -223,7 +271,12 @@ public class CropControlTest {
         int expResult = -1;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -243,7 +296,12 @@ public class CropControlTest {
         int expResult = -1;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -263,7 +321,12 @@ public class CropControlTest {
         int expResult = 0;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -283,7 +346,12 @@ public class CropControlTest {
         int expResult = 0;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
@@ -303,7 +371,12 @@ public class CropControlTest {
         int expResult = 6300;
         
         // Call Method
-        int result = CropControl.calcRatFood(offerings, wheat);
+        int result = 0;
+        try {
+            result = CropControl.calcRatFood(offerings, wheat);
+        } catch (CropControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         // Test Results
         assertEquals(expResult, result);
