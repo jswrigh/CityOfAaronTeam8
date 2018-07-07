@@ -116,83 +116,11 @@ public class GameControl {
  
        
     public static int loadGame(String fileName) {
-        try {
-            try (FileInputStream fileInput = new FileInputStream(new File(fileName)); 
-                ObjectInputStream objectInput = new ObjectInputStream(fileInput)) {
-                
-                // Read objects
-                Game game = (Game) objectInput.readObject();
-                Player player = (Player) objectInput.readObject();
-//                Actor player.actor = (Actor) objectInput.readObject();
-                Map map = (Map) objectInput.readObject();
-//                Wheat wheat = (Wheat) objectInput.readObject();
-//                Land land = (Land) objectInput.readObject();
-//                Population population = (Population) objectInput.readObject();
-                
-                // Write to console during development
-                System.out.println (game.toString());
-                System.out.println (player.toString());
-//                System.out.println (player.actor.toString);
-                System.out.println (map.toString());
-//                System.out.println (wheat.toString());
-//                System.out.println (land.toString());
-//                System.out.println (population.toString());
-                
-            }
-        }
-        catch (FileNotFoundException exception) {
-            System.out.println("File not found");
-            return -1;
-        } catch (IOException exception) {
-            System.out.println("Error initializing stream");
-            return -1;
-        } catch (ClassNotFoundException exception) {
-            System.out.println("Class not found");
-            return -1;
-        }
-    return 0;
+        return 0;
     }
     
     public static int saveGame(String fileName) {
-        
-        /*
-        try {
-            try (FileOutputStream fileOutput = new FileOutputStream(new File(fileName)); 
-                ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput)) {
-                
-                // Write objects
-                objectOutput.writeObject(game);
-                objectOutput.writeObject(player);
-//                objectOutput.readObject(player.actor);
-                objectOutput.writeObject(map);
-//                objectOutput.writeObject(wheat);
-//                objectOutput.writeObject(land);
-//                objectOutput.writeObject(population);
-                
-                // Write to console during development
-                System.out.println (game.toString());
-                System.out.println (player.toString());
-//                System.out.println (player.actor.toString);
-                System.out.println (map.toString());
-//                System.out.println (wheat.toString());
-//                System.out.println (land.toString());
-//                System.out.println (population.toString());
-                
-            }
-        }
-        catch (FileNotFoundException exception) {
-            System.out.println("File not found");
-            return -1;
-        } catch (IOException exception) {
-            System.out.println("Error initializing stream");
-            return -1;
-        } catch (ClassNotFoundException exception) {
-            System.out.println("Class not found");
-            return -1;
-        }
-        */
-        
-    return 0;
+        return 0;
     }
         
    static int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) throws GameControlException {
