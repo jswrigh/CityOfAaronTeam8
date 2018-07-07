@@ -119,9 +119,11 @@ public class GameControl {
         }
         */
         InventoryItem[] items = new InventoryItem[2];
+        items[0] = new InventoryItem();
         items[0].setItemType(ItemType.Tool);
         items[0].setQuantity(3);
         items[0].setCondition(Condition.Good);
+        items[1] = new InventoryItem();
         items[1].setItemType(ItemType.Tool);
         items[1].setQuantity(2);
         items[1].setCondition(Condition.Poor);
