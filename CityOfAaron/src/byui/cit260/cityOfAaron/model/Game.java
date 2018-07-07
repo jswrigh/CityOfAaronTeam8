@@ -14,6 +14,9 @@ public class Game implements Serializable {
     private int acresOwned;
     private int wheatInStorage;
     private int currentYear;
+    private int currentFoodAllocation;
+    private int currentPlantingAllocation;
+    private int currentTithingPercentage;
 
     public Game() {
         // Empty Constructor for JavaBeans
@@ -75,6 +78,31 @@ public class Game implements Serializable {
         this.currentYear = currentYear;
     }
 
+    public int getCurrentFoodAllocation() {
+        return currentFoodAllocation;
+    }
+
+    public void setCurrentFoodAllocation(int currentFoodAllocation) {
+        this.currentFoodAllocation = currentFoodAllocation;
+    }
+
+    public int getCurrentPlantingAllocation() {
+        return currentPlantingAllocation;
+    }
+
+    public void setCurrentPlantingAllocation(int currentPlantingAllocation) {
+        this.currentPlantingAllocation = currentPlantingAllocation;
+    }
+
+    public int getCurrentTithingPercentage() {
+        return currentTithingPercentage;
+    }
+
+    public void setCurrentTithingPercentage(int currentTithingPercentage) {
+        this.currentTithingPercentage = currentTithingPercentage;
+    }
+
+    
     @Override
     public String toString() {
         return "Game {" 
@@ -85,6 +113,9 @@ public class Game implements Serializable {
                 + ", acresOwned=" + acresOwned 
                 + ", wheatInStorage=" + wheatInStorage 
                 + ", currentYear=" + currentYear 
+                + ", currentFoodAllocation=" + currentFoodAllocation
+                + ", currentPlantingAllocation=" + currentPlantingAllocation
+                + ", currentTithingPercentage=" + currentTithingPercentage
                 + '}';
     }  
 }
