@@ -6,6 +6,9 @@ import byui.cit260.cityOfAaron.model.*;
 import cityofaaron.*;
 import byui.cit260.cityOfAaron.view.GameMenuView;
 import byui.cit260.cityOfAaron.control.GameControl;
+import byui.cit260.cityOfAaron.exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -79,14 +82,11 @@ public class StartNewGameView extends ViewBase {
         Player player = new Player();
         player.setName(playerName);
         
-        /* Old code that made it work earlier
-        Game game = new Game();
-        game.setThePlayer(player);
-        
-        CityOfAaron.setCurrentGame(game);
-        */
-    // Now we're ready to make the call as outlined in comments at top of this method. 
-        GameControl.createNewGame(player);
+        try {
+            GameControl.createNewGame(player);
+        } catch (GameControlException ex) {
+               System.out.println(ex.getMessage());
+        }
         
         System.out.println("");
         System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");

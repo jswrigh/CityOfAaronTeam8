@@ -38,7 +38,7 @@ public class GameControl {
   Assign the map to the game
   RETURN 1 // indicates success }
  */
- public static int createNewGame (Player player) throws GameControlException {
+ public static void createNewGame (Player player) throws GameControlException {
     if (player == null) {
         throw new GameControlException("Cannot create new game without a valid player.");
     }
@@ -67,7 +67,6 @@ public class GameControl {
             throw new GameControlException("Map cannot be empty.");
         }
     game.setTheMap(map);
-    return 0;
  }
  
  public static InventoryItem[] createItems(ItemType itemType) {
