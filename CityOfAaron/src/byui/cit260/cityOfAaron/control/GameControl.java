@@ -67,22 +67,28 @@ public class GameControl {
             items[i] = new InventoryItem();
         }
 
-        items = createItems(ItemType.Animal);
-        animals[0] = (Animal)(items[0]);
+        animals[0].setItemType(ItemType.Animal);
+        animals[0].setQuantity(3);
+        animals[0].setCondition(Condition.Good);
         animals[0].setName("Horse");
         animals[0].setAge(5);
-        animals[1] = (Animal)(items[1]);
-        animals[0].setName("Elephant");
-        animals[0].setAge(92);
+        animals[1].setItemType(ItemType.Animal);
+        animals[1].setQuantity(1);
+        animals[1].setCondition(Condition.Fair);
+        animals[1].setName("Elephant");
+        animals[1].setAge(92);
         storehouse.setAnimals(animals);
 
-        items = createItems(ItemType.Provisions);
-        provisions[0] = (Provision)(items[0]);
+        provisions[0].setItemType(ItemType.Provisions);
+        provisions[0].setQuantity(3);
+        provisions[0].setCondition(Condition.Good);
         provisions[0].setName("Oil Lamp");
         provisions[0].setPerishable(false);
-        provisions[1] = (Provision)(items[1]);
-        provisions[0].setName("Fruit");
-        provisions[0].setPerishable(true);
+        provisions[1].setItemType(ItemType.Provisions);
+        provisions[1].setQuantity(3);
+        provisions[1].setCondition(Condition.Good);
+        provisions[1].setName("Fruit");
+        provisions[1].setPerishable(true);
         storehouse.setProvisions(provisions);
 
         items = createItems(ItemType.Tool);
@@ -113,32 +119,12 @@ public class GameControl {
         }
         */
         InventoryItem[] items = new InventoryItem[2];
-        switch(itemType) {
-            case Animal :
-                items[0] = new InventoryItem();
-                items[0].setItemType(ItemType.Animal);
-                items[0].setQuantity(3);
-                items[0].setCondition(Condition.Good);
-                items[1] = new InventoryItem();
-                items[1].setItemType(ItemType.Animal);
-                items[1].setQuantity(2);
-                items[1].setCondition(Condition.Poor);
-                break;
-            case Tool :
-                for(int i=0; i<items.length; i++) { // create objects
-                    items[i] = new InventoryItem();
-                }
-                items[0].setItemType(ItemType.Tool);
-                items[0].setQuantity(3);
-                items[0].setCondition(Condition.Good);
-                items[1].setItemType(ItemType.Tool);
-                items[1].setQuantity(2);
-                items[1].setCondition(Condition.Poor);
-                break;
-            case Provisions :
-                items[0] = new InventoryItem(ItemType.Provisions, 3, Condition.Good);
-                break;
-        }    
+        items[0].setItemType(ItemType.Tool);
+        items[0].setQuantity(3);
+        items[0].setCondition(Condition.Good);
+        items[1].setItemType(ItemType.Tool);
+        items[1].setQuantity(2);
+        items[1].setCondition(Condition.Poor);
         return items;
     }
        
