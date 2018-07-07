@@ -4,6 +4,7 @@ import java.io.Serializable;
 import byui.cit260.cityOfAaron.model.*;
 import byui.cit260.cityOfAaron.exceptions.GameControlException;
 import cityofaaron.CityOfAaron;
+import cityofaaron.GameConstants;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,8 +43,9 @@ public class GameControl {
         throw new GameControlException("Cannot create new game without a valid player.");
     }
     Game game = new Game();
-    game.setThePlayer(player);
     CityOfAaron.setCurrentGame(game);
+    game.setThePlayer(player);
+    game.setCurrentYear(GameConstants.INITIAL_YEAR);
     Storehouse storehouse = new Storehouse();
     InventoryItem[] items = new InventoryItem[2];
     
@@ -194,7 +196,7 @@ public class GameControl {
     return 0;
     }
         
-   int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) {
+   static int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) throws GameControlException {
        if(currentInventory < 0 || population < 0) {
             throw new GameControlException("Curent inventory or population can't be less than zero.");
        }
@@ -208,22 +210,22 @@ public class GameControl {
        return finalRating;
    }
    
-   static public int liveTheYear() {
+   static public int liveTheYear() throws GameControlException {
        Game game = new Game();
        game = CityOfAaron.getCurrentGame();
        System.out.print("Living year ");
        int currentYear = game.getCurrentYear();
        System.out.println(currentYear);
-       if(currentYear == 10) {
-           try {
-               int finalRating = calculateRating(game.getCurrentInventory, game.getStartInventory, game.getCurrentPopulation(), game.getStartPopulation);
-           } catch (GameControlException ge) {
-                System.out.println(ge.getMessage());
-                return false;
-           }
+       if(currentYear > GameConstants.YEARS_TO_PLAY) {
+        //   try {
+               int finalRating = calculateRating(game.getWheatInStorage(), GameConstants.INITIAL_WHEAT_IN_STORE, game.getCurrentPopulation(), GameConstants.INITIAL_POPULATION);
+        //   } catch (GameControlException ge) {
+        //        System.out.println(ge.getMessage());
+        //        return false;
+        //   }
            return finalRating;
        }
-       game.setCurrentYear(currentYear++);
+       game.setCurrentYear(++currentYear);
        return 0;
    }
    
