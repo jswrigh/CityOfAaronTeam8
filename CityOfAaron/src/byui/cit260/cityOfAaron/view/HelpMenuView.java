@@ -60,7 +60,7 @@ public class HelpMenuView extends ViewBase {
         // This is a "dispatch" function that decides what
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
-    switch(inputs[0].trim().toUpperCase()){
+        switch(inputs[0].trim().toUpperCase()){
             case "G" :
                 System.out.println("Your responsibility is to buy and sell land,\n" +
                     "determine how much wheat to plant each year and how much to set aside to feed your\n" +
@@ -69,11 +69,11 @@ public class HelpMenuView extends ViewBase {
                     "people will die, and your workforce will be diminished. Plan carefully. And Oh, there is\n" +
                     "always a danger of rats eating your wheat.\n");
                 break;
-            
+
             case "L" :
                 System.out.println("The city of Aaron is near the land Bountiful\n");
                 break;
-                
+
             case "V" :
                 System.out.println("View the map by selecting the option on the map menu\n");
                 break;
@@ -85,7 +85,7 @@ public class HelpMenuView extends ViewBase {
             case "I" :
                 System.out.println("List the inventory by selecting the option on the inventory menu\n");
                 break;
-                                
+
             case "X" :
                 return false;
         }
