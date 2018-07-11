@@ -27,7 +27,7 @@ import byui.cit260.cityOfAaron.view.StartProgramView;
  */
 public class CityOfAaron {
 
-        public static Game currentGame = null;
+        private static Game currentGame = null;
 
         public static Game getCurrentGame(){
             return currentGame;
