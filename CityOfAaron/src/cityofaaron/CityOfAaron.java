@@ -17,6 +17,12 @@ import byui.cit260.cityOfAaron.model.Location;
 import byui.cit260.cityOfAaron.view.View;
 
 import byui.cit260.cityOfAaron.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -28,6 +34,9 @@ import byui.cit260.cityOfAaron.view.StartProgramView;
 public class CityOfAaron {
 
         private static Game currentGame = null;
+        
+        private static PrintWriter outFile = null;
+        private static BufferedReader inFile = null;
 
         public static Game getCurrentGame(){
             return currentGame;
@@ -37,17 +46,46 @@ public class CityOfAaron {
             currentGame = game;
         }
 
+        public static PrintWriter getOutFile() {
+            return outFile;
+        }
+
+        public static void setOutFile(PrintWriter outFile) {
+            CityOfAaron.outFile = outFile;
+        }
+
+        public static BufferedReader getInFile() {
+            return inFile;
+        }
+
+        public static void setInFile(BufferedReader inFile) {
+            CityOfAaron.inFile = inFile;
+        }
+
         /**
          * @param args the command line arguments
          */
         public static void main(String[] args) {
 
             try {
+                // open character stream files for user input and output
+                CityOfAaron.inFile = new BufferedReader(new InputStreamReader(System.in));
+                CityOfAaron.outFile = new PrintWriter(System.out, true);
+                
+                // create StartProgramView and start the program
                 View startProgramView = new StartProgramView();
                 startProgramView.displayView();
             } catch(Throwable te){
                 System.out.println(te.getMessage());
                 te.printStackTrace();
+            }
+            finally {
+                try {
+                    CityOfAaron.inFile.close();
+                } catch (IOException ex) {
+                    System.out.println("Error closing files");
+                }
+                CityOfAaron.outFile.close();
             }
         }
 }
