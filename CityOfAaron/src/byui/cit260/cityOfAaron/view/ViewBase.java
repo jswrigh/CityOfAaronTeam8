@@ -1,5 +1,8 @@
 package byui.cit260.cityOfAaron.view;
 
+import cityofaaron.CityOfAaron;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -11,6 +14,10 @@ public abstract class ViewBase implements View {
     /**
      * Constructor
      */
+    
+    protected final BufferedReader keyboard = CityOfAaron.getInFile();   
+    protected final PrintWriter console = CityOfAaron.getOutFile();
+ 
     public ViewBase(){
     }
     
