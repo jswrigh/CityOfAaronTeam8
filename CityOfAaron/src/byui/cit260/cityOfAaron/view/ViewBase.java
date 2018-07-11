@@ -68,26 +68,29 @@ public abstract class ViewBase implements View {
      */
     protected String getUserInput(String prompt, boolean allowEmpty){
         
-        Scanner keyboard = new Scanner(System.in);
-        String input = "";
+//        Scanner keyboard = new Scanner(System.in);
+        String input = null;
         boolean inputReceived = false;
-        
-        while(inputReceived == false){
-            
-            System.out.println(prompt);
-            input = keyboard.nextLine();
-            
-            // Make sure we avoid a null-pointer error.
-            if (input == null){
-                input = "";
+        try{
+            while(inputReceived == false){
+
+                System.out.println(prompt);
+                input = this.keyboard.readLine();
+
+                // Make sure we avoid a null-pointer error.
+                if (input == null){
+                    input = "";
+                }
+
+                // Trim any trailing whitespace, including the carriage return.
+                input = input.trim();
+
+                if (input.equals("") == false || allowEmpty == true){
+                    inputReceived = true;
+                }
             }
-            
-            // Trim any trailing whitespace, including the carriage return.
-            input = input.trim();
-            
-            if (input.equals("") == false || allowEmpty == true){
-                inputReceived = true;
-            }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
         
         return input;
