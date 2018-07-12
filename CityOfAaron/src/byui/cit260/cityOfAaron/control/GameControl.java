@@ -4,6 +4,7 @@ import java.io.Serializable;
 import byui.cit260.cityOfAaron.model.*;
 import byui.cit260.cityOfAaron.exceptions.GameControlException;
 import byui.cit260.cityOfAaron.exceptions.MapControlException;
+import byui.cit260.cityOfAaron.view.ErrorView;
 import cityofaaron.CityOfAaron;
 import cityofaaron.GameConstants;
 
@@ -153,7 +154,8 @@ public class GameControl {
         return finalRating;
     }
    
-    static public int liveTheYear() throws GameControlException {
+//    static public int liveTheYear() throws GameControlException {
+    public int liveTheYear() throws GameControlException {
         Game game = new Game();
         int finalRating = 0;
         game = CityOfAaron.getCurrentGame();
@@ -164,7 +166,7 @@ public class GameControl {
             try {
                  finalRating = calculateRating(game.getWheatInStorage(), GameConstants.INITIAL_WHEAT_IN_STORE, game.getCurrentPopulation(), GameConstants.INITIAL_POPULATION);
             } catch (GameControlException ge) {
-                 System.out.println(ge.getMessage());
+                 ErrorView.display(this.getClass().getName(), "Error calculating rating: " + ge.getMessage());
             }
             return finalRating;
         }

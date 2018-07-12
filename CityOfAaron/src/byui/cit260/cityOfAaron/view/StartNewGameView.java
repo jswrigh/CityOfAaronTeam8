@@ -85,7 +85,7 @@ public class StartNewGameView extends ViewBase {
         try {
             GameControl.createNewGame(player);
         } catch (GameControlException ex) {
-               System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error processing crop menu input: " + ex.getMessage());
         }
         
         System.out.println("");

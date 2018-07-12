@@ -99,7 +99,7 @@ public class GameMenuView extends ViewBase{
                         return false;
                 }
         } catch (GameControlException ge) {
-                System.out.println(ge.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error processing menu selection: " + ge.getMessage());
                 return false;
         }
             // Text will scroll above menu so let's pause for a few seconds first.

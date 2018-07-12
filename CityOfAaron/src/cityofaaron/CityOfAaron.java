@@ -14,6 +14,7 @@ import byui.cit260.cityOfAaron.model.InventoryItem;
 import byui.cit260.cityOfAaron.model.ItemType;
 import byui.cit260.cityOfAaron.model.Condition;
 import byui.cit260.cityOfAaron.model.Location;
+import byui.cit260.cityOfAaron.view.ErrorView;
 import byui.cit260.cityOfAaron.view.View;
 
 import byui.cit260.cityOfAaron.view.StartProgramView;
@@ -88,7 +89,7 @@ public class CityOfAaron {
                 View startProgramView = new StartProgramView();
                 startProgramView.displayView();
             } catch(Throwable te){
-                System.out.println(te.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error opening streams: " + te.getMessage());
                 te.printStackTrace();
             }
             finally {

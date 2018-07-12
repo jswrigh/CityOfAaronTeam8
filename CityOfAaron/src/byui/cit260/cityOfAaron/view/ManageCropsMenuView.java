@@ -110,10 +110,10 @@ public class ManageCropsMenuView extends ViewBase {
                         return false;
                 }
             } catch(CropControlException ce) {
-                System.out.println(ce.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error processing crop menu input: " + ce.getMessage());
                 return false;
             } catch(NumberFormatException ne) {
-                System.out.println("Invalid number.");
+                ErrorView.display(this.getClass().getName(), "Error, invalid number: " + ne.getMessage());
                 return false;
             }
         
