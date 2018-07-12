@@ -43,7 +43,7 @@ public class ViewTemplate {
         
         while(inputReceived == false){
             
-            System.out.println(prompt);
+            this.console.println(prompt);
             input = keyboard.nextLine();
             
             // Make sure we avoid a null-pointer error.
@@ -121,7 +121,7 @@ public class ViewTemplate {
         
         while(keepGoing == true){
             
-            System.out.println(message);
+            this.console.println(message);
             String[] inputs = getInputs();
             keepGoing = doAction(inputs);
         }

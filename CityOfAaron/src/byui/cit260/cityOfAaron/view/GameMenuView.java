@@ -74,7 +74,7 @@ public class GameMenuView extends ViewBase{
                         break;
 
                     case "M" :
-                        System.out.println("Soon you will be able to move to a new location!\n");
+                        this.console.println("Soon you will be able to move to a new location!\n");
                         break;
 
                     case "C" :
@@ -116,18 +116,18 @@ public class GameMenuView extends ViewBase{
         Map map = game.getTheMap();
         Location[][] locations = map.getLocations();
         Location location;
-        System.out.print("Here is the map.\n");
-        System.out.print    ("  1 2 3 4 5 \n");
+        this.console.print("Here is the map.\n");
+        this.console.print    ("  1 2 3 4 5 \n");
         for(int r = 0; r < locations.length; r++) {
-            System.out.print("-----------\n");
-            System.out.print(r+1+"|");
+            this.console.print("-----------\n");
+            this.console.print(r+1+"|");
             for(int c = 0; c < locations.length; c++) {
                 location=locations[r][c];
-                System.out.print(location.getMapSymbol());
-                System.out.print("|");
+                this.console.print(location.getMapSymbol());
+                this.console.print("|");
             }
-            System.out.print("\n");
+            this.console.print("\n");
         }
-        System.out.print("-----------\n");       
+        this.console.print("-----------\n");       
     }
 }

@@ -65,11 +65,11 @@ public class ReportsMenuView extends ViewBase {
         // or switch statement.
        switch(inputs[0].trim().toUpperCase()){
                 case "A" :
-                    System.out.println("There are lots of animals.\n"); // should print actual values.
+                    this.console.println("There are lots of animals.\n"); // should print actual values.
                     break;
 
                 case "T" :
-                    System.out.println("There are lots of tools.\n"); // should print actual values.
+                    this.console.println("There are lots of tools.\n"); // should print actual values.
                     break;
 
                 case "P" :
@@ -80,11 +80,11 @@ public class ReportsMenuView extends ViewBase {
                     }
                     
                     
-                    System.out.println("There are lots of provisions.\n"); // should print actual values.
+                    this.console.println("There are lots of provisions.\n"); // should print actual values.
                      break;
 
                 case "W" :
-                    System.out.println("Sterling, Jacob, and Charlot wrote this!\n"); // should print values from variables.
+                    this.console.println("Sterling, Jacob, and Charlot wrote this!\n"); // should print values from variables.
                     break;            
 
                 case "X" :

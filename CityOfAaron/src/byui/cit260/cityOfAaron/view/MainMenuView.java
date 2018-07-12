@@ -61,7 +61,7 @@ public class MainMenuView extends ViewBase{
                 break;
                 
             case "Q" :
-                System.out.println("Thank you for playing. Goodbye!");
+                this.console.println("Thank you for playing. Goodbye!");
                 // return false;
                 System.exit(0); // We might change this later but at least the program ends.
         }
@@ -85,6 +85,6 @@ public class MainMenuView extends ViewBase{
     }
     
     private void loadSavedGame(){
-        System.out.println("\nLoad Saved Game called. Implementation coming soon.\n");
+        this.console.println("\nLoad Saved Game called. Implementation coming soon.\n");
     }
 }

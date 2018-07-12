@@ -53,7 +53,7 @@ public abstract class ViewBase implements View {
             
             String message = getMessage();
             if (message != null) {
-                System.out.println(getMessage());
+                this.console.println(getMessage());
             }
             String[] inputs = getInputs();
             keepGoing = doAction(inputs);
@@ -74,7 +74,7 @@ public abstract class ViewBase implements View {
         try{
             while(inputReceived == false){
 
-                System.out.println(prompt);
+                this.console.println(prompt);
                 input = this.keyboard.readLine();
 
                 // Make sure we avoid a null-pointer error.

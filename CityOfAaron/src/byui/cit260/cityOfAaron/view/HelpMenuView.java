@@ -62,7 +62,7 @@ public class HelpMenuView extends ViewBase {
         // or switch statement.
         switch(inputs[0].trim().toUpperCase()){
             case "G" :
-                System.out.println("Your responsibility is to buy and sell land,\n" +
+                this.console.println("Your responsibility is to buy and sell land,\n" +
                     "determine how much wheat to plant each year and how much to set aside to feed your\n" +
                     "people. In addition, it will be your job to pay an annual tithe on the wheat that is\n" +
                     "harvested. If you fail to provide enough wheat for the people, people will starve, some\n" +
@@ -71,19 +71,19 @@ public class HelpMenuView extends ViewBase {
                 break;
 
             case "L" :
-                System.out.println("The city of Aaron is near the land Bountiful\n");
+                this.console.println("The city of Aaron is near the land Bountiful\n");
                 break;
 
             case "V" :
-                System.out.println("View the map by selecting the option on the map menu\n");
+                this.console.println("View the map by selecting the option on the map menu\n");
                 break;
 
             case "M" :
-                System.out.println("Move to another location by entering coordinates\n");
+                this.console.println("Move to another location by entering coordinates\n");
                 break;            
 
             case "I" :
-                System.out.println("List the inventory by selecting the option on the inventory menu\n");
+                this.console.println("List the inventory by selecting the option on the inventory menu\n");
                 break;
 
             case "X" :

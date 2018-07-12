@@ -59,7 +59,7 @@ public class StartNewGameView extends ViewBase {
         
         // If the user just hit Enter then bail out without doing the action
         if(inputs[0] == null || inputs[0].equals("")){
-            System.out.println("No player name entered. Returning to the main menu. \n");
+            this.console.println("No player name entered. Returning to the main menu. \n");
             return false;
         }
         
@@ -88,8 +88,8 @@ public class StartNewGameView extends ViewBase {
                 ErrorView.display(this.getClass().getName(), "Error processing crop menu input: " + ex.getMessage());
         }
         
-        System.out.println("");
-        System.out.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
+        this.console.println("");
+        this.console.println("Welcome to the game," + CityOfAaron.getCurrentGame().getThePlayer().getName() + "!\n");
         
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayView();
