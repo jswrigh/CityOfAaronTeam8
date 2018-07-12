@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author sterling
@@ -132,12 +134,29 @@ public class GameControl {
         return items;
     }
        
-    public static int loadGame(String fileName) {
-        return 0;
+    public static void loadGame(String fileName) {
+        Game game = null;
+        System.out.println("Loading Game...");
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
+            try {
+                game = (Game) in.readObject();
+            } catch (ClassNotFoundException ex) {
+                System.out.println("Class not found error: " + ex.getMessage());
+            }
+        } catch (IOException ex) {
+            System.out.println("I/O Error: " + ex.getMessage());
+        } 
+        CityOfAaron.setCurrentGame(game);
     }
     
-    public static int saveGame(String fileName) {
-        return 0;
+    public static void saveGame(String fileName) {
+        Game game = CityOfAaron.getCurrentGame();
+        System.out.println("Saving Game...");
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))){
+            out.writeObject(game);
+        } catch (IOException ex) {
+            System.out.println("I/O Error: " + ex.getMessage());
+        }
     }
         
     static int calculateRating(int currentInventory, int startInventory, int population, int startPopulation) throws GameControlException {
@@ -156,9 +175,8 @@ public class GameControl {
    
     static public int liveTheYear() throws GameControlException {
 //    static int liveTheYear() {
-        Game game = new Game();
         int finalRating = 0;
-        game = CityOfAaron.getCurrentGame();
+        Game game = CityOfAaron.getCurrentGame();
         System.out.print("Living year ");
         int currentYear = game.getCurrentYear();
         System.out.println(currentYear);

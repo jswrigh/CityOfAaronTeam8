@@ -11,12 +11,12 @@ import byui.cit260.cityOfAaron.control.GameControl;
  *
  * @author sterling
  */
-public class SaveGameView extends ViewBase {
+public class LoadGameView extends ViewBase {
     
         /**
      * Constructor
      */
-    public SaveGameView(){
+    public LoadGameView(){
     }
         
 
@@ -61,7 +61,7 @@ public class SaveGameView extends ViewBase {
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
         
-        GameControl.saveGame(inputs[0]);
+        GameControl.loadGame(inputs[0]);
     
         // return false if you want this view to exit and return
         // to the view that called it.        

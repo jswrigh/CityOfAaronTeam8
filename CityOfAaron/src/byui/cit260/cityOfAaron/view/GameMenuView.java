@@ -92,7 +92,8 @@ public class GameMenuView extends ViewBase{
                         break;
 
                     case "S" :
-                        GameControl.saveGame("mygame.txt");
+                        SaveGameView saveGameMenu = new SaveGameView();
+                        saveGameMenu.displayView();
                         break;
 
                     case "X" :

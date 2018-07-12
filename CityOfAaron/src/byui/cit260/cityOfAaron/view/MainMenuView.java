@@ -85,6 +85,9 @@ public class MainMenuView extends ViewBase{
     }
     
     private void loadSavedGame(){
-        this.console.println("\nLoad Saved Game called. Implementation coming soon.\n");
+        LoadGameView view = new LoadGameView();
+        view.displayView();
+        GameMenuView gmview = new GameMenuView();
+        gmview.displayView();
     }
 }
