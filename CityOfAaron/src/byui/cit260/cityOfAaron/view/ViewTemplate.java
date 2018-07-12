@@ -37,31 +37,32 @@ public class ViewTemplate extends ViewBase
      */
     protected String getUserInput(String prompt, boolean allowEmpty){
         
-        Scanner keyboard = new Scanner(System.in); // Since this is not used for anything, we don't have to refactor for stream input
-        String input = "";
+        String input = null;
         boolean inputReceived = false;
-        
-        while(inputReceived == false){
-            
-            this.console.println(prompt);
-            input = keyboard.nextLine();
-            
-            // Make sure we avoid a null-pointer error.
-            if (input == null){
-                input = "";
+        try{
+            while(inputReceived == false){
+
+                this.console.println(prompt);
+                input = this.keyboard.readLine();
+
+                // Make sure we avoid a null-pointer error.
+                if (input == null){
+                    input = "";
+                }
+
+                // Trim any trailing whitespace, including the carriage return.
+                input = input.trim();
+
+                if (input.equals("") == false || allowEmpty == true){
+                    inputReceived = true;
+                }
             }
-            
-            // Trim any trailing whitespace, including the carriage return.
-            input = input.trim();
-            
-            if (input.equals("") == false || allowEmpty == true){
-                inputReceived = true;
-            }
+        } catch (Exception e) {
+                            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         
         return input;
     }
-    
     
     /**
      * An overloaded version of getUserInput that sets allowEmpty to false so we don't have 
