@@ -89,7 +89,7 @@ public class CityOfAaron {
                 View startProgramView = new StartProgramView();
                 startProgramView.displayView();
             } catch(Throwable te){
-                ErrorView.display(this.getClass().getName(), "Error opening streams: " + te.getMessage());
+                System.out.println(te.getMessage());
                 te.printStackTrace();
             }
             finally {

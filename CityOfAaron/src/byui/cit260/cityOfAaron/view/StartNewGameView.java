@@ -7,6 +7,7 @@ import cityofaaron.*;
 import byui.cit260.cityOfAaron.view.GameMenuView;
 import byui.cit260.cityOfAaron.control.GameControl;
 import byui.cit260.cityOfAaron.exceptions.GameControlException;
+import byui.cit260.cityOfAaron.exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -64,7 +65,11 @@ public class StartNewGameView extends ViewBase {
         }
         
         String playerName = inputs[0];
-        createAndStartGame(playerName);
+        try {
+            createAndStartGame(playerName);
+        } catch (MapControlException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         return false;
     }
@@ -73,7 +78,7 @@ public class StartNewGameView extends ViewBase {
     // complex game stuff in our doAction() method. It will get messy very quickly.
     
     
-    private void createAndStartGame(String playerName){
+    private void createAndStartGame(String playerName) throws MapControlException{
         
         // Eventually you will do this: 
         // Game game = GameControl.createNewGame(playerName);

@@ -154,8 +154,8 @@ public class GameControl {
         return finalRating;
     }
    
-//    static public int liveTheYear() throws GameControlException {
-    public int liveTheYear() throws GameControlException {
+    static public int liveTheYear() throws GameControlException {
+//    static int liveTheYear() {
         Game game = new Game();
         int finalRating = 0;
         game = CityOfAaron.getCurrentGame();
@@ -164,9 +164,11 @@ public class GameControl {
         System.out.println(currentYear);
         if(currentYear > GameConstants.YEARS_TO_PLAY) {
             try {
-                 finalRating = calculateRating(game.getWheatInStorage(), GameConstants.INITIAL_WHEAT_IN_STORE, game.getCurrentPopulation(), GameConstants.INITIAL_POPULATION);
+                finalRating = calculateRating(game.getWheatInStorage(), GameConstants.INITIAL_WHEAT_IN_STORE, game.getCurrentPopulation(), GameConstants.INITIAL_POPULATION);
             } catch (GameControlException ge) {
-                 ErrorView.display(this.getClass().getName(), "Error calculating rating: " + ge.getMessage());
+//                 ErrorView.display(this.getClass().getName(), "Error calculating rating: " + ge.getMessage());
+                System.out.println(ge.getMessage());
+
             }
             return finalRating;
         }
