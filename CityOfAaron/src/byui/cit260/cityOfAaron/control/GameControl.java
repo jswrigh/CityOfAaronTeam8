@@ -3,6 +3,7 @@ package byui.cit260.cityOfAaron.control;
 import java.io.Serializable;
 import byui.cit260.cityOfAaron.model.*;
 import byui.cit260.cityOfAaron.exceptions.GameControlException;
+import byui.cit260.cityOfAaron.exceptions.MapControlException;
 import cityofaaron.CityOfAaron;
 import cityofaaron.GameConstants;
 
@@ -39,7 +40,7 @@ public class GameControl {
   Assign the map to the game
   RETURN 1 // indicates success }
  */
-    public static void createNewGame (Player player) throws GameControlException {
+    public static void createNewGame (Player player) throws GameControlException, MapControlException {
         if (player == null) {
             throw new GameControlException("Cannot create new game without a valid player.");
         }

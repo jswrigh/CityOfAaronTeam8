@@ -37,7 +37,8 @@ public class CityOfAaron {
         
         private static PrintWriter outFile = null;
         private static BufferedReader inFile = null;
-
+        private static PrintWriter logFile = null;
+        
         public static Game getCurrentGame(){
             return currentGame;
         }
@@ -62,6 +63,15 @@ public class CityOfAaron {
             CityOfAaron.inFile = inFile;
         }
 
+        public static PrintWriter getLogFile() {
+            return logFile;
+        }
+
+        public static void setLogFile(PrintWriter logFile) {
+            CityOfAaron.logFile = logFile;
+        }
+
+        
         /**
          * @param args the command line arguments
          */
@@ -71,6 +81,8 @@ public class CityOfAaron {
                 // open character stream files for user input and output
                 CityOfAaron.inFile = new BufferedReader(new InputStreamReader(System.in));
                 CityOfAaron.outFile = new PrintWriter(System.out, true);
+                
+                logFile = new PrintWriter("logFile.txt");
                 
                 // create StartProgramView and start the program
                 View startProgramView = new StartProgramView();
@@ -82,6 +94,9 @@ public class CityOfAaron {
             finally {
                 try {
                     CityOfAaron.inFile.close();
+                    if(logFile != null) {
+                        logFile.close();
+                    }
                 } catch (IOException ex) {
                     System.out.println("Error closing files");
                 }

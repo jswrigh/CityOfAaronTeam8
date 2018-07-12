@@ -37,7 +37,7 @@ public class ViewTemplate {
      */
     protected String getUserInput(String prompt, boolean allowEmpty){
         
-        Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in); // Since this is not used for anything, we don't have to refactor for stream input
         String input = "";
         boolean inputReceived = false;
         
