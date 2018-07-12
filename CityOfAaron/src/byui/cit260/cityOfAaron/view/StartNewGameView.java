@@ -68,7 +68,8 @@ public class StartNewGameView extends ViewBase {
         try {
             createAndStartGame(playerName);
         } catch (MapControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error creating map: " + ex.getMessage());
         }
         
         return false;
