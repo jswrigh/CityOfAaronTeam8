@@ -6,6 +6,9 @@
 package byui.cit260.cityOfAaron.view;
 
 import byui.cit260.cityOfAaron.control.GameControl;
+import byui.cit260.cityOfAaron.exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,12 +59,16 @@ public class LoadGameView extends ViewBase {
      */
     @Override
     public boolean doAction(String[] inputs){
-        // Act on the user's input.
-        // This is a "dispatch" function that decides what
-        // other functions to call. You can use an if-, if-else,
-        // or switch statement.
-        
-        GameControl.loadGame(inputs[0]);
+        try {
+            // Act on the user's input.
+            // This is a "dispatch" function that decides what
+            // other functions to call. You can use an if-, if-else,
+            // or switch statement.
+
+            GameControl.loadGame(inputs[0]);
+        } catch (GameControlException ex) {
+            ErrorView.display(this.getClass().getName(), "Error retrieving game from file: " + ex.getMessage());
+        }
     
         // return false if you want this view to exit and return
         // to the view that called it.        

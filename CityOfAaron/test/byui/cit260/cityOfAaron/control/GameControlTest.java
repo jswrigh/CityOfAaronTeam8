@@ -19,29 +19,7 @@ public class GameControlTest {
     }
 
 
-    /**
-     * Test of loadGame method, of class GameControl.
-     */
-    @Test
-    public void testLoadGame() {
-        System.out.println("loadGame");
-        String fileName = "";
-        int expResult = -1; // I know this doesn't work yet.
-        int result = GameControl.loadGame(fileName);
-        assertEquals(expResult, result);
-    }
 
-    /**
-     * Test of saveGame method, of class GameControl.
-     */
-    @Test
-    public void testSaveGame() {
-        System.out.println("saveGame");
-        String fileName = "";
-        int expResult = 0;
-        int result = GameControl.saveGame(fileName);
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of calculateRating method, of class GameControl.

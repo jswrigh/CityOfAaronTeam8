@@ -107,7 +107,7 @@ public class GameControl {
         game.setTheMap(map);
     }
 
-    public static InventoryItem[] createItems(ItemType itemType) {
+    public static InventoryItem[] createItems(ItemType itemType) throws GameControlException {
         /* algorithm for this method based on instructions
         public static InventoryItem createItems() {
          items = create an array InventoryItem objects
@@ -134,9 +134,11 @@ public class GameControl {
         return items;
     }
        
-    public static void loadGame(String fileName) {
+    public static void loadGame(String fileName) throws GameControlException, IOException {
         Game game = null;
-        System.out.println("Loading Game...");
+        if (game==null || fileName.length() < 1 || fileName == null) {
+            throw new GameControlException("Invalid file operation.");
+        }
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
             try {
                 game = (Game) in.readObject();
@@ -145,12 +147,15 @@ public class GameControl {
             }
         } catch (IOException ex) {
             System.out.println("I/O Error: " + ex.getMessage());
-        } 
+        }
         CityOfAaron.setCurrentGame(game);
     }
     
-    public static void saveGame(String fileName) {
+    public static void saveGame(String fileName) throws GameControlException, IOException {
         Game game = CityOfAaron.getCurrentGame();
+        if (game==null || fileName.length() < 1 || fileName == null) {
+            throw new GameControlException("Invalid file operation.");
+        }
         System.out.println("Saving Game...");
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))){
             out.writeObject(game);
