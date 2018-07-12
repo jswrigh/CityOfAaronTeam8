@@ -1,12 +1,12 @@
 package byui.cit260.cityOfAaron.view;
 
 import java.util.Scanner;
-
 /**
  *
  * @author kanderson
  */
-public class ViewTemplate {
+public class ViewTemplate extends ViewBase 
+{
     
     
     /**
@@ -142,5 +142,10 @@ public class ViewTemplate {
         // classes to do the work of the application.
         
         return true;
+    }
+
+    @Override
+    protected String getMessage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
