@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,7 +85,6 @@ public class PrintReportView extends ViewBase {
     public void saveReport(String fileName) throws IOException {
         Game game = CityOfAaron.getCurrentGame();
         Storehouse storehouse = game.getTheStorehouse();
-//        InventoryItem rowObjects[] = null;
         ArrayList<String> rowStrings = new ArrayList<String>();
         ArrayList<String> headings = new ArrayList<String>();
         
@@ -96,14 +96,13 @@ public class PrintReportView extends ViewBase {
                 headings.add("  Name     |");
                 headings.add("  Type     |");
                 headings.add("  Age      |");
-                headings.add("  Condition");
+                headings.add(" Condition|");
                 for(int i=0;i<rowObject.length;i++){
-                    rowStrings.add(String.valueOf(rowObject[i].getQuantity()));
-                    rowStrings.add(rowObject[i].getName());
-                    rowStrings.add(rowObject[i].getItemType().toString());
-                    rowStrings.add(String.valueOf(rowObject[i].getAge()));
-                    rowStrings.add(rowObject[i].getCondition().toString());
-                    rowStrings.add("\n");
+                    rowStrings.add(String.valueOf(rowObject[i].getQuantity())+"|");
+                    rowStrings.add(rowObject[i].getName()+"|");
+                    rowStrings.add(rowObject[i].getItemType().toString()+"|");
+                    rowStrings.add(String.valueOf(rowObject[i].getAge())+"|");
+                    rowStrings.add(rowObject[i].getCondition().toString()+"|\n");
                 }
             break;
         }
@@ -111,7 +110,7 @@ public class PrintReportView extends ViewBase {
             this.console.println("Try again. Please enter a valid file name.");
         }
         System.out.println("Saving Report...");
-        try (FileWriter out = new FileWriter(fileName)){
+        try (PrintWriter out = new PrintWriter(fileName)){
             out.write(reportItems + "\n\n");
             for(int i=0; i< headings.size(); i++) {
                 out.write(headings.get(i));
@@ -119,7 +118,7 @@ public class PrintReportView extends ViewBase {
             out.write("\n");
 
             for(int i=0; i< rowStrings.size(); i++) {
-                out.write(rowStrings.get(i));
+                out.format("%1$12s",rowStrings.get(i));
             }
         } catch (IOException ex) {
             System.out.println("I/O Error: " + ex.getMessage());
