@@ -1,0 +1,5 @@
+Animals
+
+  Quantity |  Name     |  Type     |  Age      |  Condition
+3HorseAnimal5Good
+1ElephantAnimal92Fair

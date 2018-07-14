@@ -7,6 +7,7 @@ package byui.cit260.cityOfAaron.view;
 
 import byui.cit260.cityOfAaron.control.GameControl;
 import byui.cit260.cityOfAaron.exceptions.GameControlException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -67,6 +68,8 @@ public class LoadGameView extends ViewBase {
 
             GameControl.loadGame(inputs[0]);
         } catch (GameControlException ex) {
+            ErrorView.display(this.getClass().getName(), "Error retrieving game from file: " + ex.getMessage());
+        } catch (IOException ex) {
             ErrorView.display(this.getClass().getName(), "Error retrieving game from file: " + ex.getMessage());
         }
     

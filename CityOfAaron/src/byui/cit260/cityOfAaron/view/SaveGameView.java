@@ -33,7 +33,7 @@ public class SaveGameView extends ViewBase {
         // Declare the array to have the number of elements you intend to get 
         // from the user.
         String[] inputs = new String[1];
-        this.console.println("To save the game, enter a valid file name. Remember it so you can retrive later!");
+        this.console.println("To save the game, enter a valid file name. Remember it so you can retrieve it later!");
         inputs[0] = getUserInput("Enter file name:");
         
         // Repeat for each input you need, putting it into its proper slot in the array.

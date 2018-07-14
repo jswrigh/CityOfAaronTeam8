@@ -64,8 +64,11 @@ public class ReportsMenuView extends ViewBase {
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
        switch(inputs[0].trim().toUpperCase()){
-                case "A" :
+                case "A" :                    
                     this.console.println("There are lots of animals.\n"); // should print actual values.
+                    PrintReportView report = new PrintReportView();
+                    report.reportItems = "Animals";
+                    report.displayView();
                     break;
 
                 case "T" :
