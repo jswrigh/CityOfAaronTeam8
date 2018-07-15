@@ -105,11 +105,23 @@ public class PrintReportView extends ViewBase {
                     rowStrings.add(rowObject[i].getCondition().toString()+"|\n");
                 }
             break;
-        }
+            case "Tools":                
+                InventoryItem toolObject[] = new InventoryItem[storehouse.getTools().length];
+                toolObject = storehouse.getTools();
+                headings.add("  Quantity |");
+                headings.add("  Type     |");
+                headings.add(" Condition|");
+                for(int i=0;i<toolObject.length;i++){
+                    rowStrings.add(String.valueOf(toolObject[i].getQuantity())+"|");
+                    rowStrings.add(toolObject[i].getItemType().toString()+"|");
+                    rowStrings.add(toolObject[i].getCondition().toString()+"|\n");
+                }
+            break;
+            }
+        
         while (game==null || fileName.length() < 1 || fileName == null) {
             this.console.println("Try again. Please enter a valid file name.");
         }
-        System.out.println("Saving Report...");
         try (PrintWriter out = new PrintWriter(fileName)){
             out.write(reportItems + "\n\n");
             for(int i=0; i< headings.size(); i++) {
