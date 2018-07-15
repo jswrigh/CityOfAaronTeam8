@@ -63,18 +63,20 @@ public class ReportsMenuView extends ViewBase {
         // This is a "dispatch" function that decides what
         // other functions to call. You can use an if-, if-else,
         // or switch statement.
-       switch(inputs[0].trim().toUpperCase()){
+        PrintReportView report;
+        switch(inputs[0].trim().toUpperCase()){
                 case "A" :                    
-                    this.console.println("There are lots of animals.\n"); // should print actual values.
-                    PrintReportView report = new PrintReportView();
+                    report = new PrintReportView();
                     report.reportItems = "Animals";
                     report.displayView();
                     break;
 
                 case "T" :
-                    this.console.println("There are lots of tools.\n"); // should print actual values.
+                    report = new PrintReportView();
+                    report.reportItems = "Tools";
+                    report.displayView();
                     break;
-
+                    
                 case "P" :
                     InventoryItem[] items = new InventoryItem[3];
                     
